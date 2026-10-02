@@ -78,50 +78,34 @@
     </section>
 <br><br><br><br><br>
 
-    <!-- FEATURED SECTION -->
+    <!-- FEATURED SECTION (Auto Slider) -->
     <section class="featured">
-
-        <img src="images/AS FEATURED IN SECTION.png" alt="featured in">
-           
-        <!-- <p class="featured-title">
-            AS FEATURED IN
-        </p>
-
-        <div class="featured-logos">
-
-            <span>delicious.</span>
-
-            <span class="goodfood">
-                goodfood
-            </span>
-
-            <span>
-                this<br>
-                morning
-            </span>
-
-            <span>
-                THE TIMES
-            </span>
-
-            <span class="love-weekend">
-                LOVE YOUR<br>
-                WEEKEND
-            </span>
-
-            <span class="sunday">
-                Sunday<br>
-                Times
-            </span>
-
-            <span>
-                SATURDAY<br>
-                Kitchen
-            </span>
-
+        <h2 style="text-align: center; margin-bottom: 20px; font-family: Poppins; font-size: 20px; color: #333;">AS FEATURED IN</h2>
+        
+        <div class="logos-slider-container">
+            <div class="logos-track">
+                <!-- Original logos -->
+                <span class="logo-text">delicious.</span>
+                <span class="logo-text goodfood">goodfood</span>
+                <span class="logo-text">this<br>morning</span>
+                <span class="logo-text">THE TIMES</span>
+                <span class="logo-text love-weekend">LOVE YOUR<br>WEEKEND</span>
+                <span class="logo-text sunday">Sunday<br>Times</span>
+                <span class="logo-text">SATURDAY<br>Kitchen</span>
+                
+                <!-- Duplicate logos for continuous sliding -->
+                <span class="logo-text">delicious.</span>
+                <span class="logo-text goodfood">goodfood</span>
+                <span class="logo-text">this<br>morning</span>
+                <span class="logo-text">THE TIMES</span>
+                <span class="logo-text love-weekend">LOVE YOUR<br>WEEKEND</span>
+                <span class="logo-text sunday">Sunday<br>Times</span>
+                <span class="logo-text">SATURDAY<br>Kitchen</span>
+            </div>
         </div>
- -->
     </section>
+
+   
 
 
     <!-- PRODUCTS SECTION -->
@@ -230,18 +214,26 @@
 
     <!-- CARBON NEUTRAL SECTION -->
     <section class="carbon-neutral">
-        <img src="images/Group 59.png" alt="featured in">
-          
-        <!-- <h2>THE UK'S FIRST CARBON-NEUTRAL VODKA COMPANY</h2>
-        <p class="subtitle">Naturally flavoursome vodka with a truly sustainable conscience</p>
-
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="images/image 42.jpg" alt="Gallery Image 1"></div>
-            <div class="gallery-item"><img src="images/image 43.png" alt="Gallery Image 2"></div>
-            <div class="gallery-item"><img src="images/image 44.jpg" alt="Gallery Image 3"></div>
-            <div class="gallery-item"><img src="images/image 45.jpg" alt="Gallery Image 4"></div>
-            <div class="gallery-item"><img src="images/image 46.jpg" alt="Gallery Image 4"></div>
-        </div> -->
+        <h2 style="font-family: Poppins; font-size: 25px; font-weight: 700; color: #242116; margin-bottom: 10px;">THE UK'S FIRST CARBON-NEUTRAL VODKA COMPANY</h2>
+        <p class="subtitle" style="font-family: Poppins; font-size: 14px; margin-bottom: 30px;">Naturally flavoursome vodka with a truly sustainable conscience</p>
+        
+        <div class="photo-slider-container">
+            <div class="photo-track">
+                <!-- Original Photos -->
+                <div class="gallery-item"><img src="images/image 42.jpg" alt="Gallery Image 1"></div>
+                <div class="gallery-item"><img src="images/image 43.png" alt="Gallery Image 2"></div>
+                <div class="gallery-item"><img src="images/image 44.jpg" alt="Gallery Image 3"></div>
+                <div class="gallery-item"><img src="images/image 45.jpg" alt="Gallery Image 4"></div>
+                <div class="gallery-item"><img src="images/image 46.jpg" alt="Gallery Image 5"></div>
+                
+                <!-- Duplicated Photos for infinite scroll -->
+                <div class="gallery-item"><img src="images/image 42.jpg" alt="Gallery Image 1"></div>
+                <div class="gallery-item"><img src="images/image 43.png" alt="Gallery Image 2"></div>
+                <div class="gallery-item"><img src="images/image 44.jpg" alt="Gallery Image 3"></div>
+                <div class="gallery-item"><img src="images/image 45.jpg" alt="Gallery Image 4"></div>
+                <div class="gallery-item"><img src="images/image 46.jpg" alt="Gallery Image 5"></div>
+            </div>
+        </div>
     </section>
 
     <!-- FOOTER SECTION -->
@@ -302,6 +294,7 @@
         </div>
     </footer>
 
+    <script src="slider.js"></script>
 </body>
 
 </html>

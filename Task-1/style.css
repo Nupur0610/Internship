@@ -910,3 +910,128 @@ body {
         padding: 30px 20px;
     }
 }
+
+/* =========================
+   AUTO SLIDERS
+========================= */
+
+/* Logos Slider (CSS Marquee) */
+.logos-slider-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+    background-color: #f5f4f6; /* Matching the featured section background */
+}
+
+.logos-track {
+    display: inline-block;
+    animation: slide-logos 20s linear infinite;
+    /* Optional: Pause on hover */
+    /* cursor: pointer; */
+}
+/*
+.logos-slider-container:hover .logos-track {
+    animation-play-state: paused;
+}
+*/
+
+.logo-text {
+    display: inline-block;
+    margin: 0 40px;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    color: #333;
+    line-height: 0.9;
+    vertical-align: middle;
+}
+
+.logo-text.goodfood {
+    font-weight: bold;
+}
+.logo-text.love-weekend {
+    font-size: 12px;
+    font-weight: bold;
+}
+.logo-text.sunday {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+@keyframes slide-logos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Testimonials Slider (JS driven) */
+.testimonials {
+    background-color: #a98d6f;
+    padding: 50px 20px;
+    color: white;
+}
+
+.testimonials-slider-container {
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.testimonial-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.testimonial-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.testimonial-slide .quote {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.testimonial-slide .author {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Photo Slider (CSS Marquee) */
+.photo-slider-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+}
+
+.photo-track {
+    display: inline-block;
+    animation: slide-photos 30s linear infinite;
+}
+
+.photo-track .gallery-item {
+    display: inline-block;
+    margin: 0 10px;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 350px;
+    width: 350px;
+}
+
+.photo-track .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes slide-photos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
