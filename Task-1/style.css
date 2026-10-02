@@ -79,6 +79,13 @@ body {
     justify-content: flex-end;
     gap: 30px;
     padding-right: 40px;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25px;
+    text-transform: uppercase;
+    
+    
 }
 
 .nav-right {
@@ -87,6 +94,12 @@ body {
     justify-content: flex-start;
     gap: 30px;
     padding-left: 40px;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25px;
+    text-transform: uppercase;
+    
 }
 
 .navbar a {
@@ -204,7 +217,7 @@ body {
 .featured {
     background: #f5f4f6;
 
-    padding: 40px 50px 45px;
+    padding:50px 40px 50px 45px;
 
     text-align: left;
 }
@@ -270,10 +283,15 @@ body {
 
 
 .products h2 {
-    font-size: 18px;
-    font-weight: 600;
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: 500;
     margin-bottom: 35px;
     letter-spacing: 0.5px;
+    line-height: 100%;
+    text-transform: uppercase;
+    font-style: Medium;
+    color: #242116;
 }
 
 
@@ -359,24 +377,37 @@ body {
 }
 
 .about-subtitle {
-    font-size: 10px;
-    font-weight: 500;
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 400;
     margin-bottom: 5px;
+    font-style: Regular;
+    text-transform: uppercase;
+    letter-spacing: 0%;
+    color: #FFFFFF;
 }
 
 .about-content h2 {
-    font-size: 28px;
+    font-family: Poppins;
+    font-size: 33px;
     font-weight: 700;
     margin-bottom: 15px;
-    letter-spacing: 1px;
+    letter-spacing: 0%;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    
 }
 
 .about-text {
     font-family: Poppins;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 22px;
     margin-bottom: 20px;
     font-weight: 400;
+    color: #FFFFFF;
+    font-style:Regular;
+    
 }
 
 .about-btn {
@@ -420,10 +451,15 @@ body {
 }
 
 .bestsellers h2 {
-    font-size: 18px;
-    font-weight: 600;
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: 500;
     margin-bottom: 35px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0%;
+    line-height: 100%;
+    text-transform: uppercase;
+    font-style: Medium;
+    color: #242116;
 }
 
 .bestsellers-grid {
@@ -447,15 +483,30 @@ body {
 }
 
 .bestseller-name {
-    font-size: 12px;
+    font-family: Poppins;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 5px;
+    font-style: SemiBold;
+    letter-spacing: 0%;
+    line-height: 100%;
+    color: #000000;
+    text-align: center;
+    
 }
 
 .bestseller-price {
-    font-size: 12px;
+    font-family: Poppins;
+    font-size: 20px;
     font-weight: 500;
+    margin-bottom: 5px;
+    font-style: Medium;
+    letter-spacing: 0%;
+    line-height: 100%;
+    color: #000000;
+    text-align: center;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .add-to-cart-btn {
@@ -530,12 +581,13 @@ body {
     text-decoration: none;
     text-align: center;
     padding: 12px 30px;
-    font-size: 10px;
+    font-size: 20px;
     font-weight: 600;
     letter-spacing: 1px;
     transition: 0.3s;
     width: fit-content;
     margin-top: 5px;
+    line-height: 100%;
 }
 
 .journal-btn:hover {
@@ -651,10 +703,11 @@ body {
     display: block;
     color: white;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 600;
     margin-bottom: 10px;
-    letter-spacing: 0.5px;
+    letter-spacing: 5%;
+    line-height: 30px;
 }
 
 .footer-right {
@@ -666,10 +719,15 @@ body {
 }
 
 .footer-center h4 {
-    font-size: 12px;
+    font-family: Poppins;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 15px;
-    letter-spacing: 1px;
+    letter-spacing: 5%;
+    font-style: Bold;
+    color: white;
+    line-height: 100%;
+    align-items: center;
 }
 
 .newsletter-form {

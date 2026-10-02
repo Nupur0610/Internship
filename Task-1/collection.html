@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Collection - Gattertop Drinks Co.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific CSS for the collection grid */
+        .collection-hero {
+            background-color: #006059;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .collection-hero h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .collection-hero p {
+            font-size: 14px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .collection-grid-container {
+            max-width: 1000px;
+            margin: 60px auto;
+            position: relative;
+            background-color: white;
+            /* Background SVG mimicking the wavy split */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1000,0 L1000,400 Q800,300 500,500 T0,700 Z' fill='%23a47e53'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 333px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .grid-cell {
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 20px;
+        }
+        
+        .grid-cell.dark-text {
+            color: #333;
+        }
+        .grid-cell.light-text {
+            color: white;
+        }
+
+        .grid-cell img.bottle {
+            max-height: 80%;
+            z-index: 2;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+        }
+
+        .grid-cell .text-overlay {
+            position: absolute;
+            z-index: 3;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        /* Adjustments for specific cells to match the Pinterest feel */
+        .cell-1 { align-items: flex-start; justify-content: flex-start; }
+        .cell-1 .text-overlay { bottom: 20px; left: 20px; text-align: left; }
+        
+        .cell-2 { align-items: flex-end; }
+        .cell-2 .text-overlay { top: 20px; left: 20px; text-align: left; }
+        
+        .cell-3 { justify-content: flex-end; }
+        .cell-3 img.bottle { transform: rotate(15deg); }
+        
+        .cell-4 .text-overlay { top: 20px; }
+        
+        .cell-5 { flex-direction: column; }
+        .cell-5 .text-overlay { top: 20px; }
+        
+        .cell-6 { align-items: flex-end; justify-content: flex-start; }
+        .cell-6 .text-overlay { bottom: 20px; right: 20px; text-align: right; }
+        
+        .cell-7 .text-overlay { bottom: 20px; }
+        
+        .cell-8 { flex-direction: column; }
+        
+        .cell-9 { align-items: flex-end; }
+
+        @media (max-width: 900px) {
+            .collection-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+            }
+            .grid-cell { height: 300px; }
+        }
+        
+        @media (max-width: 600px) {
+            .collection-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP OFFER BAR -->
+    <div class="offer-bar">
+        UP TO 25% OFF EVERYTHING
+    </div>
+
+    <!-- NAVIGATION (Dark background for this page) -->
+    <header class="navbar" style="background-color: #006059;">
+        <span class="nav-left">
+            <a href="index.html">SHOP</a>
+            <a href="#">JOURNAL</a>
+            <a href="collection.html">COCKTAILS</a>
+        </span>
+        <div class="logo" style="color: white;">
+            GATTERTOP
+            <span>DRINKS CO.</span>
+        </div>
+        <span class="nav-right">
+            <a href="#">ABOUT US</a>
+            <a href="#">CONTACT</a>
+            <a href="#">CAREERS</a>
+            <div class="icons" style="color: white;">
+                <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+                <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+                <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg></span>
+            </div>
+        </span>
+    </header>
+
+    <div class="collection-hero">
+        <h1>THE GATTERTOP COLLECTION</h1>
+        <p>Explore our award-winning range of sustainable, naturally flavoursome vodkas and discover the perfect pour.</p>
+    </div>
+
+    <!-- PINTEREST STYLE GRID -->
+    <div class="collection-grid-container">
+        <div class="collection-grid">
+            
+            <!-- Cell 1 -->
+            <div class="grid-cell cell-1 light-text">
+                <div class="text-overlay">
+                    NATURE'S<br>FINEST
+                </div>
+            </div>
+
+            <!-- Cell 2 -->
+            <div class="grid-cell cell-2 light-text">
+                <div class="text-overlay">
+                    PERFECT<br>SERVE
+                </div>
+                <img src="images/image 48.jpg" alt="No 12 Damson Vodka" class="bottle" style="border-radius: 10px; max-height: 60%; margin-bottom: 20px;">
+            </div>
+
+            <!-- Cell 3 -->
+            <div class="grid-cell cell-3 light-text">
+                <img src="images/image 50.jpg" alt="Botanical Vodka" class="bottle" style="border-radius: 10px; max-height: 70%; margin-right: 20px;">
+            </div>
+
+            <!-- Cell 4 -->
+            <div class="grid-cell cell-4 light-text">
+                <div class="text-overlay">
+                    AWARD<br>WINNING
+                </div>
+                <img src="images/image 52.jpg" alt="Damson Vodka" class="bottle" style="border-radius: 10px; max-height: 70%;">
+            </div>
+
+            <!-- Cell 5 -->
+            <div class="grid-cell cell-5 light-text">
+                <div class="text-overlay">
+                    THE DIFFERENCE<br>IS IN THE TASTE
+                </div>
+            </div>
+
+            <!-- Cell 6 -->
+            <div class="grid-cell cell-6 dark-text">
+                <div class="text-overlay">
+                    SUSTAINABLY<br>SOURCED
+                </div>
+                <img src="images/image 54.jpg" alt="Bundle" class="bottle" style="border-radius: 10px; max-height: 60%; margin-left: 20px;">
+            </div>
+
+            <!-- Cell 7 -->
+            <div class="grid-cell cell-7 dark-text">
+                <div class="text-overlay">
+                    CRAFTED<br>WITH CARE
+                </div>
+            </div>
+
+            <!-- Cell 8 -->
+            <div class="grid-cell cell-8 dark-text">
+                <div class="text-overlay">
+                    VODKA FOR<br>EVERY TASTE
+                </div>
+            </div>
+
+            <!-- Cell 9 -->
+            <div class="grid-cell cell-9 dark-text">
+                <img src="images/image 35.jpg" alt="Collection" class="bottle" style="border-radius: 10px; max-height: 80%;">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="#">SHOP</a>
+                <a href="#">ABOUT US</a>
+                <a href="#">CONTACT US</a>
+                <a href="#">B CORP</a>
+            </div>
+            <div class="footer-center">
+                <h4>NEWSLETTER</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter email">
+                    <button type="submit">SIGN UP</button>
+                </form>
+                <p>SIGN UP FOR EXCLUSIVE OFFERS, STORIES, EVENTS & MORE.</p>
+            </div>
+            <div class="footer-right">
+                <a href="#">OUR STORY</a>
+                <a href="#">NEWS & NOTES</a>
+                <a href="#">POLICIES</a>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-logo">
+            GATTERTOP
+            <span>DRINKS CO</span>
+        </div>
+        <div class="payment-options">
+            <img src="images/Screenshot_2-removebg-preview (1) 1.jpg" alt="Payment Options">
+        </div>
+    </footer>
+
+</body>
+</html>
