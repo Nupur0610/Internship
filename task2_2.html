@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 - Pixel Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 800px;
+        }
+
+        .container {
+            display: flex;
+            gap: 12px;
+            padding: 12px;
+            width: 800px;
+            height: 400px;
+            min-width: 600px;
+            min-height: 300px;
+            background-color: #3a3a3a;
+            box-sizing: border-box;
+        }
+
+        col {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .red { background-color: #ea4840; }
+        .cyan { background-color: #33c2c8; }
+        .gold { background-color: #d0b16a; }
+        .white { background-color: #ffffff; }
+
+        /* Column 1 */
+        .col-1 { width: 195px; }
+        .col-1 > .red { width: 195px; height: 210px; margin-bottom: 12px; }
+        .col-1 > .white { width: 195px; height: 164px; }
+        
+        /* Column 2 */
+        .col-2 { width: 439px; }
+        
+        .col-2-row { width: 450px; }
+        .col-2-row.top { height: 115px; margin-bottom: 12px; }
+        .col-2-row.mid { height: 120px; margin-bottom: 12px; }
+        .col-2-row.bot { height: 120px; margin-bottom: 0px; }
+        
+        .col-2-row > div { float: left; }
+        
+        .col-2-row.top > .cyan { width: 244px; height: 106px; margin-right: 12px; }
+        .col-2-row.top > .gold { width: 183px; height: 106px; }
+        
+        .col-2-row.mid > .gold { width: 183px; height: 123px; margin-right: 12px; }
+        .col-2-row.mid > .white { width: 244px; height: 123px; }
+        
+        .col-2-row.bot > .red { width: 244px; height: 123px; margin-right: 12px; }
+        .col-2-row.bot > .cyan { width: 183px; height: 123px; }
+        
+        /* Column 3 */
+        .col-3 { width: 125px; }
+        .col-3 > .gold { width: 125px; height: 106px; margin-bottom: 12px; }
+        .col-3 > .red { width: 125px; height: 258px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Column 1 -->
+        <div class="col-1">
+            <div class="red"></div>
+            <div class="white"></div>
+        </div>
+        
+        <!-- Column 2 -->
+        <div class="col-2">
+            <!-- Top Row -->
+            <div class="col-2-row top">
+                <div class="cyan"></div>
+                <div class="gold"></div>
+            </div>
+            <!-- Middle Row -->
+            <div class="col-2-row mid">
+                <div class="gold"></div>
+                <div class="white"></div>
+            </div>
+            <!-- Bottom Row -->
+            <div class="col-2-row bot">
+                <div class="red"></div>
+                <div class="cyan"></div>
+            </div>
+        </div>
+        
+        <!-- Column 3 -->
+        <div class="col-3">
+            <div class="gold"></div>
+            <div class="red"></div>
+        </div>
+    </div>
+</body>
+</html>

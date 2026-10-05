@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 - Flex Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 800px;
+        }
+
+        .container {
+            display: flex;
+            gap: 12px;
+            padding: 12px;
+            width: 800px;
+            height: 400px;
+            min-width: 600px;
+            min-height: 300px;
+            background-color: #3a3a3a;
+            box-sizing: border-box;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .col-1 { flex: 3; }
+        .col-2 { flex: 7; }
+        .col-3 { flex: 2; }
+
+        .box {
+            flex-grow: 1;
+        }
+
+        .red { background-color: #ea4840; }
+        .cyan { background-color: #33c2c8; }
+        .gold { background-color: #d0b16a; }
+        .white { background-color: #ffffff; }
+
+        /* Column 1 */
+        .col-1 > .red { flex: 11; }
+        .col-1 > .white { flex: 9; }
+        
+        /* Column 2 */
+        .col-2-row {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .col-2-row.top { flex: 6; }
+        .col-2-row.mid { flex: 7; }
+        .col-2-row.bot { flex: 7; }
+        
+        .col-2-row.top > .cyan { flex: 4; }
+        .col-2-row.top > .gold { flex: 3; }
+        
+        .col-2-row.mid > .gold { flex: 3; }
+        .col-2-row.mid > .white { flex: 4; }
+        
+        .col-2-row.bot > .red { flex: 4; }
+        .col-2-row.bot > .cyan { flex: 3; }
+        
+        /* Column 3 */
+        .col-3 > .gold { flex: 6; }
+        .col-3 > .red { flex: 14; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Column 1 (Original Col 1) -->
+        <div class="col col-1">
+            <div class="box red"></div>
+            <div class="box white"></div>
+        </div>
+        
+        <!-- Column 2 (Original Cols 2, 3, 4) -->
+        <div class="col col-2">
+            <!-- Top Row -->
+            <div class="col-2-row top">
+                <div class="box cyan"></div>
+                <div class="box gold"></div>
+            </div>
+            <!-- Middle Row -->
+            <div class="col-2-row mid">
+                <div class="box gold"></div>
+                <div class="box white"></div>
+            </div>
+            <!-- Bottom Row -->
+            <div class="col-2-row bot">
+                <div class="box red"></div>
+                <div class="box cyan"></div>
+            </div>
+        </div>
+        
+        <!-- Column 3 (Original Col 5) -->
+        <div class="col col-3">
+            <div class="box gold"></div>
+            <div class="box red"></div>
+        </div>
+    </div>
+</body>
+</html>
