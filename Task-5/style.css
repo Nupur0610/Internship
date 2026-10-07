@@ -1,0 +1,618 @@
+/* ================================================= */
+/* ================= GENERAL ======================= */
+/* ================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505;
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ================================================= */
+/* ================= NAVBAR ======================== */
+/* ================================================= */
+
+.navbar {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    z-index: 10;
+}
+
+
+/* LOGO */
+
+.logo img {
+    width: 90px;
+    height: auto;
+
+    display: block;
+}
+
+
+/* NAVIGATION */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+}
+
+.nav-links a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 10px;
+}
+
+.nav-btn {
+    background-color: #ff4b26;
+
+    padding: 9px 17px;
+
+    border-radius: 20px;
+}
+
+
+/* ================================================= */
+/* ================= FIRST HERO ==================== */
+/* ================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 100px 7% 50px;
+}
+
+
+/* LEFT CONTENT */
+
+.hero-content {
+    width: 50%;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* SMALL TITLE */
+
+.hero .small-title {
+    color: #ff5a2a;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+
+/* FIRST HERO HEADING */
+
+.hero h1 {
+    font-size: clamp(45px, 5vw, 75px);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+
+/* DESCRIPTION */
+
+.description {
+    color: #999;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+/* BUTTONS */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+}
+
+.primary-btn {
+    background-color: #ff4b26;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    padding: 11px 20px;
+
+    border-radius: 20px;
+}
+
+.secondary-btn {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 10px;
+}
+
+
+/* BOTTOM TEXT */
+
+.bottom-text {
+    color: #777;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+
+    margin-top: 30px;
+}
+
+
+/* ================================================= */
+/* ================= COMMON IMAGE ================== */
+/* ================================================= */
+
+.hero-image {
+    width: 50%;
+
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+}
+
+.hero-image img {
+    width: 90%;
+
+    max-width: 550px;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* ================================================= */
+/* ================= SECOND HERO =================== */
+/* ================================================= */
+
+.hero-1 {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 100px 7% 50px;
+}
+
+
+/* SMALL TITLE */
+
+.hero-1 .small-title {
+    color: gray;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+
+/* HEADING */
+
+.hero-1 h2 {
+    font-size: clamp(45px, 5vw, 75px);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+
+/* DESCRIPTION */
+
+.hero-1 .description {
+    color: #999;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+/* IMAGE */
+
+.hero-1 .hero-image {
+    width: 50%;
+}
+
+.hero-1 .hero-image img {
+    width: 90%;
+
+    max-width: 550px;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* ================================================= */
+/* ================= THIRD HERO ==================== */
+/* ================================================= */
+
+.hero-2 {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 100px 7% 50px;
+}
+
+
+/* HEADING */
+
+.hero-2 h2 {
+    font-family: "Antonio", Arial, sans-serif;
+
+    font-weight: 500;
+
+    font-size: 82px;
+
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+
+/* DESCRIPTION */
+
+.hero-2 p {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-weight: 400;
+
+    font-size: 18px;
+
+    line-height: 27px;
+
+    color: #999;
+}
+
+
+/* IMAGE */
+
+.hero-2 .hero-image {
+    width: 50%;
+}
+
+.hero-2 .hero-image img {
+    width: 100%;
+
+    max-width: 864px;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* ================================================= */
+/* ================= FOURTH HERO =================== */
+/* ================================================= */
+
+.hero-3 {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: #050505;
+
+    padding: 100px 7% 80px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* CONTENT */
+
+.hero-3-content {
+    width: 100%;
+
+    max-width: 1000px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* MAIN HEADING */
+
+.hero-3 h2 {
+
+    font-family: Antonio;
+font-weight: 500;
+font-style: Regular;
+font-size: 85px;
+line-height: 86.7px;
+letter-spacing: -2px;
+text-align: center;
+vertical-align: middle;
+color: #ECE8D9;
+width: 691;
+height: 87;
+opacity: 1;
+
+}
+
+
+/* ================================================= */
+/* ================= STEP CONTAINER ================ */
+/* ================================================= */
+
+.steps-container {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    background-color: #0b0807;
+
+    border: 1px solid #713016;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+
+/* ================================================= */
+/* ================= STEP CARD ===================== */
+/* ================================================= */
+
+.step-card {
+    min-height: 285px;
+
+    padding: 20px 18px;
+
+    border-right: 1px solid #442017;
+}
+
+.step-card:last-child {
+    border-right: none;
+}
+
+
+/* NUMBER */
+
+.step-number {
+
+    font-family: Antonio;
+font-weight: 400;
+font-style: Regular;
+font-size: 168px;
+line-height: 168px;
+letter-spacing: 0%;
+vertical-align: middle;
+color:#DD3E1F;
+
+} 
+
+.step-number.orange {
+    color:#DA8135;
+
+}
+
+
+/* CARD TITLE */
+
+.step-card h3 {
+    font-family: Antonio;
+font-weight: 500;
+font-style: Regular;
+font-size: 51px;
+line-height: 52px;
+letter-spacing: -1px;
+vertical-align: middle;
+color:#ECE8D9;
+}
+
+
+/* CARD DESCRIPTION */
+
+.step-card p {
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 17px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #8C8C87;
+    ;
+
+    /* color: #777;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1.45; */
+}
+
+
+/* ================================================= */
+/* ================= RESPONSIVE ==================== */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+
+    /* FIRST / SECOND / THIRD HERO */
+
+    .hero,
+    .hero-1,
+    .hero-2 {
+        flex-direction: column;
+
+        justify-content: center;
+
+        padding: 100px 5% 60px;
+    }
+
+
+    .hero-content {
+        width: 100%;
+    }
+
+
+    .hero-image {
+        width: 100%;
+
+        margin-top: 40px;
+    }
+
+
+    .hero-image img {
+        width: 90%;
+    }
+
+
+    /* THIRD HERO */
+
+    .hero-2 h2 {
+        font-size: 55px;
+    }
+
+    .hero-2 .hero-image {
+        width: 100%;
+    }
+
+    .hero-2 .hero-image img {
+        width: 100%;
+    }
+
+
+    /* FOURTH HERO */
+
+    .hero-3 {
+        padding: 80px 5% 50px;
+    }
+
+    .hero-3 h2 {
+        font-size: 55px;
+    }
+
+
+    /* STEP CARDS */
+
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+
+    .step-card {
+        border-right: none;
+
+        border-bottom: 1px solid #442017;
+    }
+
+    .step-card:last-child {
+        border-bottom: none;
+    }
+}
+
