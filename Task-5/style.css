@@ -3,23 +3,65 @@
    GLOBAL RESET
    ========================================================= */
 
-* {
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
+
     background-color: #050505;
     color: white;
+
     font-family: Arial, Helvetica, sans-serif;
+
+    overflow-x: hidden;
 }
 
 img {
     max-width: 100%;
+    height: auto;
 }
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   GLOBAL VARIABLES
+   ========================================================= */
+
+:root {
+    --bg: #050505;
+    --card-bg: #0b0807;
+
+    --cream: #ece8d9;
+    --white: #ffffff;
+
+    --gray: #999999;
+    --dark-gray: #777777;
+
+    --orange: #ff4b26;
+    --orange-light: #ff633b;
+
+    --border: #713016;
+    --dark-border: #442017;
+
+    /* Consistent section spacing */
+    --section-padding: 100px;
+    --section-padding-tablet: 80px;
+    --section-padding-mobile: 60px;
+}
+
 
 /* =========================================================
    COMMON TEXT STYLES
@@ -30,7 +72,7 @@ img {
 }
 
 .description {
-    color: #999;
+    color: var(--gray);
     font-family: "Inter", sans-serif;
 }
 
@@ -49,6 +91,7 @@ img {
 
 .navbar {
     position: absolute;
+
     top: 0;
     left: 0;
 
@@ -64,45 +107,58 @@ img {
     z-index: 10;
 }
 
+.logo {
+    flex-shrink: 0;
+}
+
 .logo img {
     width: 90px;
     height: auto;
+
     display: block;
 
     transition: transform 0.3s ease;
 }
 
-/* Logo hover */
 .logo img:hover {
     transform: scale(1.05);
 }
 
+
+/* ---------- NAV LINKS ---------- */
+
 .nav-links {
     display: flex;
     align-items: center;
+
     gap: 32px;
 }
 
 .nav-links a {
     color: white;
+
     text-decoration: none;
-    font-size: 10px;
+
+    font-size: 18px;
 
     transition:
         color 0.3s ease,
         transform 0.3s ease;
 }
 
-/* Navbar link hover */
 .nav-links a:hover {
-    color: #ff5a2a;
+    color: var(--orange);
     transform: translateY(-2px);
 }
 
-/* Get Started button */
+
+/* ---------- NAV BUTTON ---------- */
+
 .nav-btn {
-    background-color: #ff4b26;
+    background-color: var(--orange);
+
     padding: 9px 17px;
+
     border-radius: 20px;
 
     transition:
@@ -111,12 +167,15 @@ img {
         box-shadow 0.3s ease;
 }
 
-/* Get Started hover */
 .nav-btn:hover {
     color: white !important;
-    background-color: #ff673f;
+
+    background-color: var(--orange-light);
+
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 75, 38, 0.35);
+
+    box-shadow:
+        0 6px 20px rgba(255, 75, 38, 0.35);
 }
 
 
@@ -124,8 +183,8 @@ img {
    FIRST HERO SECTION
    ========================================================= */
 
-.hero {
-    min-height: 100vh;
+   .hero {
+    min-height: 650px;
 
     display: flex;
     align-items: center;
@@ -133,27 +192,41 @@ img {
     position: relative;
     overflow: hidden;
 
-    padding: 110px 7% 70px;
+    padding: 100px 7% 70px;
+
+    gap: 50px;
 }
 
 .hero-content {
     width: 50%;
+
     position: relative;
+
     z-index: 2;
 }
 
+
+/* ---------- SMALL TITLE ---------- */
+
 .hero .small-title {
-    color: #ff5a2a;
-    font-size: 10px;
+    color: var(--orange);
+
+    font-size: 13px;
     font-weight: bold;
+
     margin-bottom: 15px;
 }
+
+
+/* ---------- MAIN HEADING ---------- */
 
 .hero h1 {
     font-family: "Antonio", sans-serif;
 
     font-size: clamp(48px, 5.5vw, 75px);
+
     line-height: 0.95;
+
     font-weight: 500;
 
     letter-spacing: -3px;
@@ -161,17 +234,15 @@ img {
     margin-bottom: 25px;
 }
 
-.hero .description {
-    font-size: 11px;
-    line-height: 1.5;
-    margin-bottom: 25px;
-}
 
-.hero-buttons {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    flex-wrap: wrap;
+/* ---------- DESCRIPTION ---------- */
+
+.hero .description {
+    font-size: 19px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
 }
 
 
@@ -179,15 +250,30 @@ img {
    HERO BUTTONS
    ========================================================= */
 
+.hero-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+
+/* ---------- PRIMARY BUTTON ---------- */
+
 .primary-btn {
-    background-color: #ff4b26;
+    background-color: var(--orange);
+
     color: white;
 
     text-decoration: none;
 
-    font-size: 10px;
+    font-size: 16px;
 
-    padding: 11px 20px;
+    padding: 11px 28px;
+
     border-radius: 20px;
 
     transition:
@@ -198,15 +284,24 @@ img {
 
 .primary-btn:hover {
     color: white;
-    background-color: #ff673f;
+
+    background-color: var(--orange-light);
+
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(255, 75, 38, 0.35);
+
+    box-shadow:
+        0 8px 25px rgba(255, 75, 38, 0.35);
 }
+
+
+/* ---------- SECONDARY BUTTON ---------- */
 
 .secondary-btn {
     color: white;
+
     text-decoration: none;
-    font-size: 10px;
+
+    font-size: 16px;
 
     transition:
         color 0.3s ease,
@@ -214,34 +309,44 @@ img {
 }
 
 .secondary-btn:hover {
-    color: #ff5a2a;
+    color: var(--orange);
+
     transform: translateX(3px);
 }
 
+
+/* ---------- BOTTOM TEXT ---------- */
+
 .hero .bottom-text {
-    font-size: 13px;
+    font-size: 18px;
+
     line-height: 1.5;
+
     margin-top: 30px;
 }
 
 
 /* =========================================================
-   HERO IMAGES
+   HERO IMAGE
    ========================================================= */
 
 .hero-image {
     width: 50%;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     position: relative;
 }
 
 .hero-image img {
-    width: min(70%, 420px);
+    width: min(58%, 300px);
+
     height: auto;
+
     object-fit: contain;
 
     transition:
@@ -251,6 +356,7 @@ img {
 
 .hero-image img:hover {
     transform: scale(1.03);
+
     filter: brightness(1.05);
 }
 
@@ -259,8 +365,8 @@ img {
    SECOND HERO SECTION
    ========================================================= */
 
-.hero-1 {
-    min-height: 100vh;
+   .hero-1 {
+    min-height: 650px;
 
     display: flex;
     align-items: center;
@@ -268,9 +374,10 @@ img {
     position: relative;
     overflow: hidden;
 
-    padding: 110px 7% 70px;
-}
+    padding: 70px 7%;
 
+    gap: 50px;
+}
 .hero-1 .hero-content {
     width: 50%;
 }
@@ -279,6 +386,7 @@ img {
     color: gray;
 
     font-size: 10px;
+
     font-weight: bold;
 
     margin-bottom: 15px;
@@ -288,17 +396,21 @@ img {
     font-family: "Antonio", sans-serif;
 
     font-size: clamp(48px, 5.5vw, 75px);
+
     line-height: 0.95;
 
     font-weight: 500;
+
     letter-spacing: -3px;
 
     margin-bottom: 25px;
 }
 
 .hero-1 .description {
-    font-size: 11px;
+    font-size: 15px;
+
     line-height: 1.5;
+
     margin-bottom: 25px;
 }
 
@@ -310,13 +422,13 @@ img {
 .creators-section {
     width: 100%;
 
-    padding: 100px 10%;
+    padding: var(--section-padding) 10%;
 
     background: #000;
 }
 
 .creators-info {
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 .creators-info h2 {
@@ -325,21 +437,28 @@ img {
     color: white;
 
     font-size: clamp(48px, 5vw, 60px);
+
     line-height: 0.95;
 
     font-weight: 400;
 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .creators-info p {
-    color: #999;
+    color: var(--gray);
 
     font-family: "Inter", sans-serif;
 
     font-size: 18px;
+
     line-height: 1.5;
 }
+
+
+/* =========================================================
+   CREATOR GRID
+   ========================================================= */
 
 .creators-grid {
     width: 100%;
@@ -353,7 +472,7 @@ img {
 
 
 /* =========================================================
-   CREATOR CARDS + HOVER
+   CREATOR CARDS
    ========================================================= */
 
 .creator-card {
@@ -379,9 +498,9 @@ img {
         filter 0.4s ease;
 }
 
-/* Image zoom on hover */
 .creator-card:hover .creator-photo {
     transform: scale(1.03);
+
     filter: brightness(1.08);
 }
 
@@ -389,23 +508,27 @@ img {
     font-family: "Inter", sans-serif;
 
     font-weight: 700;
+
     font-size: 20px;
+
     line-height: 1;
 
-    color: #ECE8D9;
+    color: var(--cream);
 
     margin-top: 18px;
+
     margin-bottom: 10px;
 
     transition: color 0.3s ease;
 }
 
 .creator-card:hover h3 {
-    color: #ff633b;
+    color: var(--orange-light);
 }
 
 .creator-small {
     width: auto;
+
     height: 25px;
 
     display: block;
@@ -413,31 +536,38 @@ img {
 
 
 /* =========================================================
-   DISCOVER / UNLOCK / KEEP SECTION
+   DISCOVER / UNLOCK / KEEP
    ========================================================= */
 
 .hero-3 {
     width: 100%;
-    min-height: 100vh;
+
+    min-height: auto;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
-    background-color: #050505;
+    background-color: var(--bg);
 
-    padding: 100px 7% 80px;
+    padding: var(--section-padding) 7%;
 
     position: relative;
+
     overflow: hidden;
 }
 
 .hero-3-content {
     width: 100%;
+
     max-width: 1200px;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 }
 
@@ -447,15 +577,16 @@ img {
     font-weight: 500;
 
     font-size: clamp(55px, 7vw, 85px);
+
     line-height: 1;
 
     letter-spacing: -2px;
 
     text-align: center;
 
-    color: #ECE8D9;
+    color: var(--cream);
 
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 
@@ -467,11 +598,13 @@ img {
     width: 100%;
 
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
 
-    background-color: #0b0807;
+    background-color: var(--card-bg);
 
-    border: 1px solid #713016;
+    border: 1px solid var(--border);
+
     border-radius: 8px;
 
     overflow: hidden;
@@ -482,7 +615,7 @@ img {
 
     padding: 25px 22px;
 
-    border-right: 1px solid #442017;
+    border-right: 1px solid var(--dark-border);
 
     transition:
         background-color 0.35s ease,
@@ -493,7 +626,6 @@ img {
     border-right: none;
 }
 
-/* Step card hover */
 .step-card:hover {
     background-color: #120b08;
 }
@@ -502,9 +634,10 @@ img {
     font-family: "Antonio", sans-serif;
 
     font-size: clamp(90px, 10vw, 168px);
+
     line-height: 0.9;
 
-    color: #DD3E1F;
+    color: #dd3e1f;
 
     transition:
         transform 0.35s ease,
@@ -516,7 +649,7 @@ img {
 }
 
 .step-number.orange {
-    color: #DA8135;
+    color: #da8135;
 }
 
 .step-card h3 {
@@ -525,43 +658,47 @@ img {
     font-weight: 500;
 
     font-size: clamp(38px, 4vw, 51px);
+
     line-height: 1;
 
     letter-spacing: -1px;
 
-    color: #ECE8D9;
+    color: var(--cream);
 
     margin-top: 25px;
+
     margin-bottom: 20px;
 
     transition: color 0.3s ease;
 }
 
 .step-card:hover h3 {
-    color: #ff633b;
+    color: var(--orange-light);
 }
 
 .step-card p {
     font-family: "Inter", sans-serif;
 
     font-size: 16px;
+
     line-height: 1.65;
 
-    color: #8C8C87;
+    color: #8c8c87;
 }
 
 
 /* =========================================================
-   PERMANENT ACCESS SECTION
+   PERMANENT ACCESS
    ========================================================= */
 
 .hero-4 {
     width: 100%;
-    min-height: 100vh;
 
-    padding: 140px 7% 100px;
+    min-height: auto;
 
-    background-color: #050505;
+    padding: var(--section-padding) 7%;
+
+    background-color: var(--bg);
 
     overflow: hidden;
 }
@@ -570,11 +707,12 @@ img {
     font-family: "Inter", sans-serif;
 
     font-size: 13px;
+
     line-height: 1;
 
     letter-spacing: 5px;
 
-    color: #A46449;
+    color: #a46449;
 
     margin-bottom: 25px;
 }
@@ -583,11 +721,12 @@ img {
     font-family: "Antonio", sans-serif;
 
     font-size: clamp(60px, 8vw, 116px);
+
     line-height: 1.02;
 
     letter-spacing: -5px;
 
-    color: #ECE8D9;
+    color: var(--cream);
 
     margin-bottom: 30px;
 }
@@ -596,9 +735,10 @@ img {
     font-family: "Inter", sans-serif;
 
     font-size: clamp(16px, 1.5vw, 23px);
+
     line-height: 1.5;
 
-    color: #8C8C87;
+    color: #8c8c87;
 
     margin-bottom: 25px;
 }
@@ -607,9 +747,10 @@ img {
     font-family: "Inter", sans-serif;
 
     font-size: 21px;
+
     line-height: 1.3;
 
-    color: #C4AB78;
+    color: #c4ab78;
 }
 
 
@@ -620,12 +761,15 @@ img {
 .pricing-table {
     width: 100%;
 
-    margin-top: 60px;
+    margin-top: 50px;
 
-    background-color: #0B0807;
+    background-color: var(--card-bg);
 
-    border: 1px solid #713016;
+    border: 1px solid var(--border);
+
     border-radius: 8px;
+
+    overflow-x: auto;
 }
 
 .pricing-table table {
@@ -639,7 +783,7 @@ img {
 }
 
 .pricing-table thead {
-    background-color: #120C09;
+    background-color: #120c09;
 }
 
 .pricing-table th {
@@ -647,17 +791,19 @@ img {
 
     padding: 15px 20px;
 
-    border-right: 1px solid #442017;
-    border-bottom: 1px solid #713016;
+    border-right: 1px solid var(--dark-border);
+
+    border-bottom: 1px solid var(--border);
 
     font-family: "Inter", sans-serif;
 
     font-size: 16px;
+
     font-weight: 400;
 
     text-align: center;
 
-    color: #C17743;
+    color: #d27737;
 }
 
 .pricing-table th:last-child {
@@ -669,8 +815,9 @@ img {
 
     padding: 15px 20px;
 
-    border-right: 1px solid #442017;
-    border-bottom: 1px solid #442017;
+    border-right: 1px solid var(--dark-border);
+
+    border-bottom: 1px solid var(--dark-border);
 
     text-align: center;
 
@@ -687,8 +834,6 @@ img {
     border-right: none;
 }
 
-
-/* Pricing row hover */
 .pricing-table tbody tr:hover td {
     background-color: #160d09;
 }
@@ -697,40 +842,44 @@ img {
     font-family: "Antonio", sans-serif;
 
     font-size: 38px;
+
     font-weight: 400;
 
-    color: #ECE8D9;
+    color: var(--cream);
 }
 
 .pricing-table .col-2 {
     font-family: "Antonio", sans-serif;
 
     font-size: 29px;
+
     font-weight: 400;
 
-    color: #BCB4A4;
+    color: #bcb4a4;
 }
 
 .pricing-table .col-3 {
     font-family: "Inter", sans-serif;
 
-    font-size: 43px;
+    font-size: 35px;
+
     font-weight: 400;
 
-    color: #E8E6DE;
+    color: #e8e6de;
 }
 
 .pricing-table .free {
-    color: #EF6C24;
+    color: #ef6c24;
 }
 
 .pricing-table .col-4 {
     font-family: "Antonio", sans-serif;
 
     font-size: 40px;
+
     font-weight: 400;
 
-    color: #B68B37;
+    color: #b68b37;
 }
 
 
@@ -740,11 +889,12 @@ img {
 
 .hero-5 {
     width: 100%;
-    min-height: 100vh;
 
-    padding: 120px 7% 100px;
+    min-height: auto;
 
-    background-color: #050505;
+    padding: var(--section-padding) 7%;
+
+    background-color: var(--bg);
 
     overflow: hidden;
 }
@@ -753,11 +903,12 @@ img {
     font-family: "Inter", sans-serif;
 
     font-size: 13px;
+
     line-height: 1;
 
     letter-spacing: 5px;
 
-    color: #A46449;
+    color: #c16b46;
 
     margin-bottom: 25px;
 }
@@ -766,18 +917,19 @@ img {
     font-family: "Antonio", sans-serif;
 
     font-size: clamp(60px, 7vw, 86px);
+
     line-height: 1.02;
 
     letter-spacing: -2px;
 
-    color: #ECE8D9;
+    color: var(--cream);
 
-    margin-bottom: 55px;
+    margin-bottom: 45px;
 }
 
 
 /* =========================================================
-   FAN GRID + CARDS
+   FAN GRID
    ========================================================= */
 
 .fan-grid {
@@ -787,30 +939,35 @@ img {
 
     grid-template-columns: repeat(4, 1fr);
 
-    border: 1px solid #713016;
+    border: 1px solid var(--border);
+
     border-radius: 6px;
 
-    background-color: #0B0807;
+    background-color: var(--card-bg);
 
     overflow: hidden;
 }
 
 .fan-card {
     width: 100%;
+
     min-height: 300px;
 
     padding: 35px 20px;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
+
     justify-content: flex-start;
 
     text-align: center;
 
-    border-right: 1px solid #442017;
-    border-bottom: 1px solid #442017;
+    border-right: 1px solid var(--dark-border);
+
+    border-bottom: 1px solid var(--dark-border);
 
     transition:
         background-color 0.35s ease,
@@ -825,23 +982,22 @@ img {
     border-bottom: none;
 }
 
-
-/* Fan card hover */
 .fan-card:hover {
     background-color: #140d09;
+
     transform: translateY(-5px);
 }
 
 .fan-icon {
     width: 58px;
+
     height: 75px;
 
     margin-bottom: 22px;
 
     object-fit: contain;
 
-    transition:
-        transform 0.35s ease;
+    transition: transform 0.35s ease;
 }
 
 .fan-card:hover .fan-icon {
@@ -854,9 +1010,10 @@ img {
     font-weight: 500;
 
     font-size: 27px;
+
     line-height: 1.02;
 
-    color: #ECE8D9;
+    color: var(--cream);
 
     margin-bottom: 16px;
 
@@ -864,7 +1021,7 @@ img {
 }
 
 .fan-card:hover h3 {
-    color: #ff633b;
+    color: var(--orange-light);
 }
 
 .fan-card p {
@@ -873,9 +1030,10 @@ img {
     font-family: "Inter", sans-serif;
 
     font-size: 14px;
+
     line-height: 1.65;
 
-    color: #8C8C87;
+    color: #8c8c87;
 }
 
 
@@ -885,11 +1043,12 @@ img {
 
 .hero-6 {
     width: 100%;
-    min-height: 100vh;
 
-    padding: 120px 7% 100px;
+    min-height: auto;
 
-    background-color: #050505;
+    padding: var(--section-padding) 7%;
+
+    background-color: var(--bg);
 
     overflow: hidden;
 }
@@ -898,11 +1057,12 @@ img {
     font-family: "Inter", sans-serif;
 
     font-size: 13px;
+
     line-height: 1;
 
     letter-spacing: 5px;
 
-    color: #A46449;
+    color: #b3562e;
 
     margin-bottom: 28px;
 }
@@ -911,11 +1071,12 @@ img {
     font-family: "Antonio", sans-serif;
 
     font-size: clamp(60px, 7vw, 86px);
+
     line-height: 1;
 
     letter-spacing: -2px;
 
-    color: #ECE8D9;
+    color: var(--cream);
 
     margin-bottom: 22px;
 }
@@ -924,9 +1085,10 @@ img {
     font-family: "Inter", sans-serif;
 
     font-size: 14px;
+
     line-height: 21px;
 
-    color: #8C8C87;
+    color: #8c8c87;
 
     max-width: 600px;
 }
@@ -939,24 +1101,27 @@ img {
 .trust-list {
     width: 100%;
 
-    margin-top: 52px;
+    margin-top: 45px;
 
     display: flex;
+
     flex-direction: column;
 
-    gap: 6px;
+    gap: 8px;
 }
 
 .trust-item {
     width: 100%;
+
     min-height: 60px;
 
     display: flex;
+
     align-items: center;
 
     padding: 12px;
 
-    background-color: #0B0807;
+    background-color: var(--card-bg);
 
     border: 1px solid #252525;
 
@@ -970,12 +1135,15 @@ img {
 
 .trust-item:hover {
     background-color: #110b08;
-    border-color: #713016;
+
+    border-color: var(--border);
+
     transform: translateX(5px);
 }
 
 .trust-icon {
     width: 25px;
+
     height: 25px;
 
     flex-shrink: 0;
@@ -989,9 +1157,10 @@ img {
     font-family: "Inter", sans-serif;
 
     font-size: 16px;
+
     line-height: 1.4;
 
-    color: #AAAAAA;
+    color: #aaaaaa;
 }
 
 
@@ -1000,151 +1169,152 @@ img {
    ========================================================= */
 
 .hero-7 {
-    width: min(884px, 86%);
+    width: 90%;
 
-    min-height: 740px;
+    max-width: 1200px;
 
-    margin: 80px auto;
+    min-height: 560px;
 
-    padding: 80px 40px;
+    margin: 0 auto;
+
+    padding: 70px 60px;
+
+    box-sizing: border-box;
+
+    background: var(--bg);
+
+    border: 2px solid #7a2e16;
+
+    border-radius: 70px;
 
     display: flex;
+
     flex-direction: column;
 
-    justify-content: center;
     align-items: center;
 
-    border-radius: 55px;
-
-    background:
-        radial-gradient(
-            70.71% 141.42% at 50% 0%,
-            #22130E 0%,
-            rgba(34, 19, 14, 0) 70%
-        );
-
-    border: 2px solid #583421;
-
-    box-shadow: 0 0 30px #8A3E1720;
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
-}
-
-.hero-7:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 45px #8A3E1740;
-}
-
-.hero-7 h2 {
-    font-family: "Antonio", sans-serif;
-
-    font-size: clamp(55px, 8vw, 118px);
-    line-height: 1.02;
-
-    letter-spacing: -2px;
+    justify-content: center;
 
     text-align: center;
 
-    color: #ECE8D9;
-
-    margin-bottom: 40px;
+    box-shadow:
+        0 15px 45px rgba(255, 75, 31, 0.08);
 }
 
+
+/* ---------- HEADING ---------- */
+
+.hero-7 h2 {
+    margin: 0 0 28px;
+
+    font-family: "Antonio", sans-serif;
+
+    font-size: clamp(52px, 6vw, 78px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    letter-spacing: -1px;
+
+    color: #f5f0e6;
+}
+
+
+/* ---------- DESCRIPTION ---------- */
+
 .hero-7 .description {
-    max-width: 500px;
+    margin: 0 0 35px;
+
+    max-width: 650px;
 
     font-family: "Inter", sans-serif;
 
-    font-size: 19px;
-    line-height: 1.5;
+    font-size: 17px;
 
-    text-align: center;
+    line-height: 1.55;
 
-    color: #8C8C87;
-
-    margin-bottom: 40px;
+    color: #999999;
 }
 
 
-/* =========================================================
-   CREATOR CTA BUTTONS
-   ========================================================= */
+/* ---------- BUTTONS ---------- */
 
 .hero-7-buttons {
     display: flex;
 
-    justify-content: center;
     align-items: center;
 
-    gap: 10px;
+    justify-content: center;
 
-    flex-wrap: wrap;
+    gap: 12px;
+
+    margin: 0;
 }
 
+
+/* ---------- CREATOR BUTTON ---------- */
+
 .hero-7 .creator {
-    min-height: 62px;
+    padding: 18px 38px;
 
-    padding: 19px 34px;
+    border: none;
 
-    border-radius: 35px;
+    border-radius: 40px;
 
-    border: 1px solid #FF6036;
-
-    background: #F34520;
+    background: var(--orange);
 
     color: white;
 
     font-family: "Inter", sans-serif;
-    font-size: 18px;
+
+    font-size: 17px;
+
+    font-weight: 700;
 
     cursor: pointer;
 
-    box-shadow: 0 0 28px #E936222C;
-
-    transition:
-        transform 0.3s ease,
-        background-color 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .hero-7 .creator:hover {
-    background-color: #ff5b35;
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(243, 69, 32, 0.4);
+    background: var(--orange-light);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(255, 75, 31, 0.3);
 }
 
+
+/* ---------- LEARN BUTTON ---------- */
+
 .hero-7 .learn {
-    min-height: 62px;
-
-    padding: 19px 34px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 35px;
+    padding: 17px 38px;
 
     border: 1px solid #333333;
 
-    color: #AAAAAA;
+    border-radius: 40px;
 
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
+    color: #aaaaaa;
 
     text-decoration: none;
 
-    transition:
-        border-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+    font-family: "Inter", sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+    transition: all 0.3s ease;
 }
 
 .hero-7 .learn:hover {
+    border-color: #777777;
+
     color: white;
-    border-color: #713016;
-    transform: translateY(-4px);
+
+    transform: translateY(-3px);
 }
 
 
@@ -1153,163 +1323,169 @@ img {
    ========================================================= */
 
 .hero-8 {
-    width: min(884px, 86%);
+    width: 90%;
 
-    min-height: 990px;
+    max-width: 1200px;
 
-    margin: 80px auto;
+    min-height: 560px;
 
-    padding: 60px 40px 80px;
+    margin: var(--section-padding) auto 0;
+
+    padding: 70px 60px 45px;
+
+    box-sizing: border-box;
+
+    background: var(--bg);
+
+    border: 2px solid #9e4227;
+
+    border-radius: 70px;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
 
-    border-radius: 55px;
-
-    background:
-        radial-gradient(
-            70.71% 141.42% at 50% 0%,
-            #22130E 0%,
-            rgba(34, 19, 14, 0) 70%
-        );
-
-    border: 2px solid #9E4227;
-
-    box-shadow: 0 0 55px #E3491D44;
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
-}
-
-.hero-8:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 70px #E3491D55;
-}
-
-.hero-8 h2 {
-    font-family: "Antonio", sans-serif;
-
-    font-size: clamp(60px, 9vw, 133px);
-    line-height: 1.02;
-
-    letter-spacing: -2px;
+    justify-content: center;
 
     text-align: center;
 
-    color: #ECE8D9;
-
-    margin-bottom: 45px;
+    box-shadow:
+        0 15px 45px rgba(255, 75, 31, 0.12);
 }
 
+
+/* ---------- HEADING ---------- */
+
+.hero-8 h2 {
+    margin: 0 0 25px;
+
+    font-family: "Antonio", sans-serif;
+
+    font-size: clamp(48px, 5.5vw, 75px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    letter-spacing: -1px;
+
+    color: #f5f0e6;
+}
+
+
+/* ---------- DESCRIPTION ---------- */
+
 .hero-8 .description {
-    max-width: 500px;
+    margin: 0 0 35px;
+
+    max-width: 650px;
 
     font-family: "Inter", sans-serif;
 
-    font-size: 19px;
-    line-height: 1.5;
+    font-size: 18px;
 
-    text-align: center;
+    line-height: 1.55;
 
-    color: #8C8C87;
-
-    margin-bottom: 45px;
+    color: #a8a8a8;
 }
+
+
+/* ---------- BUTTONS ---------- */
 
 .hero-8-buttons {
     display: flex;
 
-    justify-content: center;
     align-items: center;
 
-    gap: 10px;
+    justify-content: center;
 
-    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-bottom: 40px;
 }
 
 
-/* =========================================================
-   FINAL CTA BUTTONS
-   ========================================================= */
+/* ---------- APP BUTTON ---------- */
 
 .hero-8 .app {
-    min-height: 62px;
+    padding: 18px 38px;
 
-    padding: 19px 34px;
+    border: none;
 
-    border-radius: 35px;
+    border-radius: 40px;
 
-    border: 1px solid #FF6036;
+    background: var(--orange);
 
-    background: #F34520;
-
-    color: #FFFFFF;
+    color: white;
 
     font-family: "Inter", sans-serif;
-    font-size: 18px;
+
+    font-size: 17px;
+
+    font-weight: 700;
 
     cursor: pointer;
 
-    box-shadow: 0 0 28px #E936222C;
-
-    transition:
-        transform 0.3s ease,
-        background-color 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .hero-8 .app:hover {
-    background-color: #ff5b35;
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(243, 69, 32, 0.4);
+    background: var(--orange-light);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(255, 75, 31, 0.3);
 }
 
+
+/* ---------- CREATOR LINK ---------- */
+
 .hero-8 .becomecreator {
-    min-height: 62px;
-
-    padding: 19px 34px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 35px;
+    padding: 17px 38px;
 
     border: 1px solid #333333;
 
-    color: #AAAAAA;
+    border-radius: 40px;
 
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
+    color: #aaaaaa;
 
     text-decoration: none;
 
-    transition:
-        border-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+    font-family: "Inter", sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+    transition: all 0.3s ease;
 }
 
 .hero-8 .becomecreator:hover {
+    border-color: #777777;
+
     color: white;
-    border-color: #713016;
-    transform: translateY(-4px);
+
+    transform: translateY(-3px);
 }
 
-.hero-8 h5 {
+
+/* ---------- BOTTOM TEXT ---------- */
+
+.hero-8 .bottom-text {
+    margin: 0;
+
     font-family: "Antonio", sans-serif;
 
-    font-size: 38px;
+    font-size: 36px;
+
+    font-weight: 500;
+
+    color: #e69a2d;
+
     line-height: 1;
-
-    text-align: center;
-
-    color: #D48E3F;
-
-    margin-top: auto;
 }
 
 
@@ -1319,16 +1495,21 @@ img {
 
 footer {
     width: 100%;
-    background-color: #050505;
+
+    background-color: var(--bg);
+
+    margin-top: var(--section-padding);
 }
 
 .footer-content {
     width: 100%;
+
     min-height: 80px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 30px;
@@ -1344,6 +1525,7 @@ footer {
 
 .footer-logo img {
     width: 174px;
+
     height: auto;
 
     display: block;
@@ -1357,6 +1539,7 @@ footer {
     font-family: "Inter", sans-serif;
 
     font-size: 13px;
+
     line-height: 1.4;
 
     text-align: center;
@@ -1387,13 +1570,15 @@ footer {
 }
 
 .footer-links a:hover {
-    color: #ff5a2a;
+    color: var(--orange);
+
     transform: translateY(-2px);
 }
 
 
 /* =========================================================
-   TABLET — BELOW 1100px
+   TABLET
+   BELOW 1100px
    ========================================================= */
 
 @media (max-width: 1100px) {
@@ -1408,10 +1593,20 @@ footer {
         padding-right: 5%;
     }
 
+    .hero-4,
+    .hero-5,
+    .hero-6 {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
     .creators-section {
         padding-left: 7%;
         padding-right: 7%;
     }
+
+
+    /* ---------- CREATORS ---------- */
 
     .creators-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -1421,19 +1616,15 @@ footer {
         margin-top: 20px;
     }
 
-    .hero-4,
-    .hero-5,
-    .hero-6 {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
+
+    /* ---------- FAN GRID ---------- */
 
     .fan-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .fan-card:nth-child(4n) {
-        border-right: 1px solid #442017;
+        border-right: 1px solid var(--dark-border);
     }
 
     .fan-card:nth-child(2n) {
@@ -1446,25 +1637,34 @@ footer {
 
     .fan-card:nth-child(5),
     .fan-card:nth-child(6) {
-        border-bottom: 1px solid #442017;
+        border-bottom: 1px solid var(--dark-border);
+    }
+
+
+    /* ---------- CTA ---------- */
+
+    .hero-7,
+    .hero-8 {
+        width: 92%;
     }
 }
 
 
 /* =========================================================
-   MOBILE — BELOW 768px
+   TABLET / MOBILE
+   BELOW 768px
    ========================================================= */
 
 @media (max-width: 768px) {
 
-    /* ---------- NAVBAR ---------- */
+    /* =====================================================
+       NAVBAR
+       ===================================================== */
 
     .navbar {
         min-height: 65px;
 
         padding: 0 5%;
-
-        flex-wrap: wrap;
     }
 
     .logo img {
@@ -1476,7 +1676,7 @@ footer {
     }
 
     .nav-links a {
-        font-size: 9px;
+        font-size: 10px;
     }
 
     .nav-btn {
@@ -1484,7 +1684,9 @@ footer {
     }
 
 
-    /* ---------- HERO ---------- */
+    /* =====================================================
+       FIRST + SECOND HERO
+       ===================================================== */
 
     .hero,
     .hero-1 {
@@ -1494,9 +1696,9 @@ footer {
 
         align-items: center;
 
-        padding: 120px 6% 80px;
+        padding: 105px 6% 70px;
 
-        text-align: left;
+        gap: 40px;
     }
 
     .hero-content,
@@ -1506,29 +1708,45 @@ footer {
 
     .hero h1,
     .hero-1 h2 {
-        font-size: clamp(48px, 12vw, 70px);
+        font-size: clamp(48px, 11vw, 70px);
+
+        line-height: 0.95;
 
         letter-spacing: -2px;
     }
 
+    .hero .description,
+    .hero-1 .description {
+        font-size: 16px;
+
+        line-height: 1.5;
+    }
+
     .hero-image {
         width: 100%;
-        margin-top: 50px;
+
+        margin-top: 0;
     }
 
     .hero-image img {
-        width: min(85%, 420px);
+        width: min(65%, 360px);
     }
 
 
-    /* ---------- CREATORS ---------- */
+    /* =====================================================
+       CREATORS
+       ===================================================== */
 
     .creators-section {
-        padding: 80px 6%;
+        padding: var(--section-padding-tablet) 6%;
+    }
+
+    .creators-info {
+        margin-bottom: 40px;
     }
 
     .creators-info h2 {
-        font-size: clamp(48px, 12vw, 65px);
+        font-size: clamp(48px, 11vw, 65px);
     }
 
     .creators-info p {
@@ -1542,18 +1760,18 @@ footer {
     }
 
 
-    /* ---------- STEPS ---------- */
+    /* =====================================================
+       DISCOVER / UNLOCK / KEEP
+       ===================================================== */
 
     .hero-3 {
-        min-height: auto;
-
-        padding: 80px 5%;
+        padding: var(--section-padding-tablet) 5%;
     }
 
     .hero-3 h2 {
-        font-size: clamp(48px, 12vw, 70px);
+        font-size: clamp(48px, 10vw, 70px);
 
-        margin-bottom: 40px;
+        margin-bottom: 35px;
     }
 
     .steps-container {
@@ -1567,7 +1785,7 @@ footer {
 
         border-right: none;
 
-        border-bottom: 1px solid #442017;
+        border-bottom: 1px solid var(--dark-border);
     }
 
     .step-card:last-child {
@@ -1579,14 +1797,16 @@ footer {
     }
 
 
-    /* ---------- PRICING ---------- */
+    /* =====================================================
+       PRICING
+       ===================================================== */
 
     .hero-4 {
-        padding: 90px 5% 70px;
+        padding: var(--section-padding-tablet) 5%;
     }
 
     .hero-4 .heading {
-        font-size: clamp(55px, 13vw, 85px);
+        font-size: clamp(55px, 11vw, 85px);
 
         letter-spacing: -3px;
     }
@@ -1601,17 +1821,23 @@ footer {
 
     .pricing-table {
         margin-top: 40px;
+
+        overflow-x: auto;
     }
 
 
-    /* ---------- FAN ---------- */
+    /* =====================================================
+       FAN SECTION
+       ===================================================== */
 
     .hero-5 {
-        padding: 90px 5% 70px;
+        padding: var(--section-padding-tablet) 5%;
     }
 
     .hero-5 .heading {
-        font-size: clamp(55px, 12vw, 80px);
+        font-size: clamp(55px, 11vw, 80px);
+
+        margin-bottom: 40px;
     }
 
     .fan-grid {
@@ -1619,18 +1845,24 @@ footer {
     }
 
     .fan-card {
-        min-height: 280px;
+        min-height: 270px;
     }
 
 
-    /* ---------- TRUST ---------- */
+    /* =====================================================
+       TRUST
+       ===================================================== */
 
     .hero-6 {
-        padding: 90px 5% 70px;
+        padding: var(--section-padding-tablet) 5%;
     }
 
     .hero-6 .heading {
-        font-size: clamp(55px, 12vw, 80px);
+        font-size: clamp(55px, 11vw, 80px);
+    }
+
+    .trust-list {
+        margin-top: 35px;
     }
 
     .trust-item p {
@@ -1638,78 +1870,69 @@ footer {
     }
 
 
-    /* ---------- CREATOR CTA ---------- */
+    /* =====================================================
+       CREATOR CTA
+       ===================================================== */
 
     .hero-7 {
-        width: 90%;
-        max-width: 1020px;
+        width: 92%;
 
-        min-height: 680px;
+        min-height: 520px;
 
-        margin: 80px auto;
+        margin: 0 auto;
 
-        padding: 60px 25px;
+        padding: 55px 30px;
 
-        border-radius: 35px;
+        border-radius: 50px;
     }
 
     .hero-7 h2 {
-        font-size: clamp(50px, 12vw, 85px);
+        font-size: clamp(48px, 10vw, 70px);
 
-        letter-spacing: -1px;
+        line-height: 0.95;
     }
 
     .hero-7 .description {
-        font-size: 16px;
-    }
+        font-size: 15px;
 
-    .hero-7-buttons {
-        width: 100%;
-    }
-
-    .hero-7 .creator,
-    .hero-7 .learn {
-        width: 100%;
-        max-width: 320px;
+        max-width: 600px;
     }
 
 
-    /* ---------- FINAL CTA ---------- */
+    /* =====================================================
+       FINAL CTA
+       ===================================================== */
 
     .hero-8 {
-        width: 90%;
+        width: 92%;
 
-        min-height: 700px;
+        min-height: 520px;
 
-        margin: 60px auto;
+        margin: var(--section-padding-tablet) auto 0;
 
-        padding: 50px 25px;
+        padding: 55px 30px 40px;
 
-        border-radius: 35px;
+        border-radius: 50px;
     }
 
     .hero-8 h2 {
-        font-size: clamp(55px, 13vw, 90px);
+        font-size: clamp(48px, 10vw, 70px);
 
-        letter-spacing: -1px;
+        line-height: 0.95;
     }
 
     .hero-8 .description {
-        font-size: 16px;
-    }
-
-    .hero-8-buttons {
-        width: 100%;
-    }
-
-    .hero-8 .app,
-    .hero-8 .becomecreator {
-        width: 100%;
-        max-width: 320px;
+        font-size: 15px;
     }
 
 
-    /* ---------- FOOTER ---------- */
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+        margin-top: var(--section-padding-tablet);
+    }
 
     .footer-content {
         min-height: auto;
@@ -1730,16 +1953,20 @@ footer {
 
 
 /* =========================================================
-   SMALL MOBILE — BELOW 480px
+   SMALL MOBILE
+   BELOW 480px
    ========================================================= */
 
 @media (max-width: 480px) {
 
-    /* ---------- NAVBAR ---------- */
+    /* =====================================================
+       NAVBAR
+       ===================================================== */
 
     .navbar {
-        padding: 15px 5%;
         min-height: 60px;
+
+        padding: 12px 5%;
     }
 
     .logo img {
@@ -1754,6 +1981,7 @@ footer {
         font-size: 8px;
     }
 
+    /* Hide "Why Go Viral" on very small screens */
     .nav-links a:nth-child(3) {
         display: none;
     }
@@ -1763,62 +1991,156 @@ footer {
     }
 
 
-    /* ---------- HERO ---------- */
+    /* =====================================================
+       HERO
+       ===================================================== */
 
     .hero,
     .hero-1 {
-        padding: 110px 6% 70px;
+        padding: 95px 6% 60px;
+
+        gap: 30px;
     }
 
     .hero h1,
     .hero-1 h2 {
-        font-size: 50px;
+        font-size: clamp(42px, 12vw, 55px);
 
         letter-spacing: -1.5px;
     }
 
     .hero .description,
     .hero-1 .description {
-        font-size: 10px;
+        font-size: 14px;
+
+        line-height: 1.5;
     }
 
     .hero-image {
-        margin-top: 35px;
+        margin-top: 0;
+    }
+
+    .hero-image img {
+        width: min(75%, 300px);
     }
 
 
-    /* ---------- CREATORS ---------- */
+    /* =====================================================
+       CREATORS
+       ===================================================== */
 
     .creators-section {
-        padding: 70px 6%;
+        padding: var(--section-padding-mobile) 6%;
     }
 
-    .creators-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .creator-card {
-        width: 100%;
+    .creators-info {
+        margin-bottom: 35px;
     }
 
     .creators-info h2 {
-        font-size: 50px;
+        font-size: clamp(42px, 12vw, 55px);
     }
 
     .creators-info p {
         font-size: 14px;
     }
 
+    .creators-grid {
+        grid-template-columns: 1fr;
 
-    /* ---------- FAN CARDS ---------- */
+        gap: 30px;
+    }
+
+    .creator-card {
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       STEPS
+       ===================================================== */
+
+    .hero-3 {
+        padding: var(--section-padding-mobile) 5%;
+    }
+
+    .hero-3 h2 {
+        font-size: clamp(42px, 12vw, 58px);
+
+        margin-bottom: 30px;
+    }
+
+    .step-card {
+        padding: 25px 20px;
+    }
+
+    .step-number {
+        font-size: 85px;
+    }
+
+    .step-card h3 {
+        font-size: 38px;
+    }
+
+    .step-card p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       PRICING
+       ===================================================== */
+
+    .hero-4 {
+        padding: var(--section-padding-mobile) 5%;
+    }
+
+    .hero-4 .small-title {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero-4 .heading {
+        font-size: clamp(45px, 12vw, 60px);
+
+        letter-spacing: -2px;
+    }
+
+    .hero-4 .description,
+    .hero-4 .description2 {
+        font-size: 14px;
+    }
+
+    .pricing-table {
+        margin-top: 30px;
+    }
+
+
+    /* =====================================================
+       FAN
+       ===================================================== */
+
+    .hero-5 {
+        padding: var(--section-padding-mobile) 5%;
+    }
+
+    .hero-5 .heading {
+        font-size: clamp(45px, 12vw, 62px);
+
+        margin-bottom: 30px;
+    }
 
     .fan-grid {
         grid-template-columns: 1fr;
     }
 
     .fan-card {
+        min-height: 240px;
+
         border-right: none !important;
-        border-bottom: 1px solid #442017 !important;
+
+        border-bottom: 1px solid var(--dark-border) !important;
     }
 
     .fan-card:last-child {
@@ -1826,18 +2148,166 @@ footer {
     }
 
 
-    /* ---------- TRUST ---------- */
+    /* =====================================================
+       TRUST
+       ===================================================== */
+
+    .hero-6 {
+        padding: var(--section-padding-mobile) 5%;
+    }
+
+    .hero-6 .small-title {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero-6 .heading {
+        font-size: clamp(45px, 12vw, 62px);
+    }
+
+    .trust-list {
+        margin-top: 30px;
+    }
 
     .trust-item {
         align-items: flex-start;
+
+        padding: 14px;
     }
 
     .trust-icon {
         margin-top: 2px;
     }
 
+    .trust-item p {
+        font-size: 13px;
 
-    /* ---------- FOOTER ---------- */
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       CREATOR CTA
+       ===================================================== */
+
+    .hero-7 {
+        width: 94%;
+
+        min-height: auto;
+
+        margin: 0 auto;
+
+        padding: 50px 20px 40px;
+
+        border-radius: 40px;
+    }
+
+    .hero-7 h2 {
+        font-size: clamp(40px, 11vw, 55px);
+
+        line-height: 0.95;
+
+        margin-bottom: 20px;
+    }
+
+    .hero-7 .description {
+        font-size: 14px;
+
+        line-height: 1.5;
+
+        margin-bottom: 25px;
+    }
+
+    .hero-7-buttons {
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 10px;
+    }
+
+    .hero-7 .creator,
+    .hero-7 .learn {
+        width: 100%;
+
+        max-width: 280px;
+
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       FINAL CTA
+       ===================================================== */
+
+    .hero-8 {
+        width: 94%;
+
+        min-height: auto;
+
+        margin: var(--section-padding-mobile) auto 0;
+
+        padding: 50px 20px 35px;
+
+        border-radius: 40px;
+    }
+
+    .hero-8 h2 {
+        font-size: clamp(40px, 11vw, 55px);
+
+        line-height: 0.95;
+
+        margin-bottom: 20px;
+    }
+
+    .hero-8 .description {
+        font-size: 14px;
+
+        line-height: 1.5;
+
+        margin-bottom: 25px;
+    }
+
+    .hero-8-buttons {
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 10px;
+
+        margin-bottom: 30px;
+    }
+
+    .hero-8 .app,
+    .hero-8 .becomecreator {
+        width: 100%;
+
+        max-width: 280px;
+
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+
+    .hero-8 .bottom-text {
+        font-size: 28px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+        margin-top: var(--section-padding-mobile);
+    }
+
+    .footer-content {
+        padding: 25px 6%;
+    }
 
     .footer-logo img {
         width: 140px;
@@ -1854,6 +2324,56 @@ footer {
 
 
 /* =========================================================
+   VERY SMALL PHONES
+   BELOW 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-links a {
+        font-size: 7px;
+    }
+
+    .nav-btn {
+        padding: 6px 8px;
+    }
+
+    .hero,
+    .hero-1 {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero h1,
+    .hero-1 h2 {
+        font-size: 40px;
+    }
+
+    .hero-image img {
+        width: 80%;
+    }
+
+    .hero-7 h2,
+    .hero-8 h2 {
+        font-size: 38px;
+    }
+
+    .hero-7 .creator,
+    .hero-7 .learn,
+    .hero-8 .app,
+    .hero-8 .becomecreator {
+        font-size: 14px;
+
+        padding: 15px 25px;
+    }
+}
+
+
+/* =========================================================
    ACCESSIBILITY — REDUCE MOTION
    ========================================================= */
 
@@ -1863,7 +2383,9 @@ footer {
     *::before,
     *::after {
         scroll-behavior: auto !important;
+
         transition: none !important;
+
         animation: none !important;
     }
 }
