@@ -1,0 +1,1813 @@
+
+/* =========================
+   GENERAL STYLES
+========================= */
+
+:root {
+    --bg: #050505;
+    --panel: #0a0a09;
+    --orange: #ff4b26;
+    --orange-light: #ff633b;
+    --gold: #e5c66f;
+    --white: #f4f1e8;
+    --muted: #85827b;
+    --line: #24211b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--white);
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--orange-light);
+    outline-offset: 3px;
+}
+
+.page-shell {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.eyebrow{
+    font-size: 20px;
+}
+main{
+    padding:
+        clamp(60px, 11vw, 155px)
+        clamp(18px, 5.5vw, 80px)
+        clamp(60px, 10vw, 145px);
+}
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: relative;
+    z-index: 50;
+
+    min-height: 82px;
+    padding: 18px clamp(18px, 5.5vw, 80px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    border-bottom: 1px solid #191919;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(18px, 3.4vw, 48px);
+    color: #c4c1b9;
+    font-size: clamp(14px, 1.3vw, 16px);
+}
+
+.nav-links a {
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 90px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Hamburger (shown on mobile only) */
+
+.nav-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar.open .nav-toggle span:nth-child(2) { opacity: 0; }
+.navbar.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 14px 23px;
+
+    border: 1px solid transparent;
+    border-radius: 999px;
+
+    font-size: 16px;
+    white-space: nowrap;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    background: var(--orange);
+    color: white;
+}
+
+.button-primary:hover {
+    background: var(--orange-light);
+}
+
+.button-secondary {
+    border-color: #484137;
+    background: #11100e;
+    color: #eee9df;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+
+.hero-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(290px, 0.9fr);
+
+    gap: clamp(30px, 5vw, 76px);
+
+    align-items: stretch;
+}
+
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    min-width: 0;
+}
+
+.hero-1 .eyebrow {
+    margin: 0 0 20px;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: clamp(12px, 1.5vw, 18px);
+    line-height: 1.2;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: #a65a2b;
+}
+
+.hero-1 h1 {
+    margin: 0 0 24px;
+
+    font-family: "Anton", "Antonio", Impact, "Arial Narrow", sans-serif;
+    font-weight: 400;
+    font-size: clamp(42px, 7.2vw, 76px);
+    line-height: 1;
+    letter-spacing: -1px;
+
+    color: #EEE9D9;
+
+    overflow-wrap: break-word;
+}
+
+.hero-description {
+    margin: 0 0 32px;
+    max-width: 560px;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: clamp(16px, 1.7vw, 20px);
+    line-height: 1.55;
+
+    color: #85857F;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.microcopy {
+    margin: 28px 0 0;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: clamp(13px, 1.3vw, 15px);
+    line-height: 1.4;
+
+    color: #74746C;
+}
+
+.hero-2{
+    width: 678;
+height: 532;
+opacity: 1;
+gap: 16px;
+
+}
+
+.hero-2 .eyebrow{
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+line-height: 100%;
+letter-spacing: 3px;
+vertical-align: middle;
+width: 678;
+height: 13;
+opacity: 1;
+color: #C16829;
+
+}
+
+.hero-2 .heading{
+    font-family: Anton;
+font-weight: 400;
+font-style: Regular;
+font-size: 95px;
+line-height: 58.32px;
+letter-spacing: 0%;
+vertical-align: middle;
+width: 678;
+height: 59;
+opacity: 1;
+color: #EEE9D9;
+
+}
+
+.hero-2 .description{
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 18px;
+line-height: 18px;
+letter-spacing: 0%;
+vertical-align: middle;
+width: 678;
+height: 18;
+opacity: 1;
+color: #85857F;
+
+}
+
+.creators-grid {
+    height: 390;
+    opacity: 1;
+    gap: 12px;
+    padding-top: 14px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  
+}
+
+
+/* =========================================================
+   CREATOR CARDS
+========================================================= */
+
+.creator-card {
+    width: 126;
+height: 376;
+opacity: 1;
+border-radius: 12px;
+border: 1px solid #54402B;
+    min-width: 0;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+.creator-card:hover {
+    transform: translateY(-8px);
+}
+
+.creator-photo 
+{
+opacity: 1;
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+.creator-card:hover .creator-photo {
+    transform: scale(1.03);
+}
+
+.creator-card h3 {
+    font-family: Anton;
+font-weight: 400;
+font-style: Regular;
+font-size: 29px;
+line-height: 21.6px;
+letter-spacing: 0%;
+vertical-align: middle;
+color: #EEE9D9;
+padding-left: 3%;
+    margin-top: 18px;
+
+    margin-bottom: 10px;
+
+    transition: color 0.3s ease;
+}
+.creator-card .pos{
+font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 15px;
+line-height: 13.5px;
+letter-spacing: 0%;
+vertical-align: middle;
+width: 32;
+height: 14;
+opacity: 1;
+color: #85857F;
+padding-left: 3%;
+
+}
+.creator-card .reach{
+    font-family: Inter;
+font-weight: 700;
+font-style: Regular;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: 0%;
+vertical-align: middle;
+width: 36.11249923706055;
+height: 13;
+opacity: 1;
+top: 95.1px;
+left: 23.7px;
+padding-left: 25%;
+color: #C6AA65;
+
+}
+.creator-card:hover h3 {
+    color: var(--orange-light);
+}
+
+.creator-small {
+    width: auto;
+
+    height: 25px;
+
+    display: block;
+}
+
+/* ================================================
+                    New Section
+================================================  */
+
+.hero-3 {
+height: 797;
+opacity: 1;
+gap: 16px;
+
+    width: 100%;
+
+    min-height: auto;
+
+    padding: var(--section-padding) 7%;
+
+    background-color: var(--bg);
+
+    overflow: hidden;
+}
+
+.hero-3 .eyebrow {
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+line-height: 100%;
+letter-spacing: 3px;
+vertical-align: middle;
+width: 678;
+height: 13;
+opacity: 1;
+color: #C16829;
+
+    margin-bottom: 25px;
+}
+
+.hero-3 .heading {
+    font-family: Anton;
+font-weight: 400;
+font-style: Regular;
+font-size: 95px;
+line-height: 52.92px;
+letter-spacing: 0%;
+vertical-align: middle;
+width: 678;
+height: 53;
+opacity: 1;
+color: #EEE9D9;
+
+}
+.hero-3 .description{
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 18px;
+line-height: 18px;
+letter-spacing: 0%;
+vertical-align: middle;
+width: 678;
+height: 18;
+opacity: 1;
+color: #85857F;
+
+}
+
+/* =========================================================
+   FAN GRID
+========================================================= */
+
+.hero-3 .steps-grid {
+ height: auto;
+opacity: 1;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    background-color: var(--card-bg);
+
+    overflow: hidden;
+    gap: 15px;
+}
+
+.step-card {
+    width: 216;
+height: 313;
+top: 20px;
+opacity: 1;
+padding: 21px 17px 126.32px;
+border-radius: 9px;
+border-width: 1px;
+background: linear-gradient(145.47deg, #171410 0%, #080A09 100%);
+border: 1px solid #55402D;
+box-shadow: 0px 6px 14px 0px #48180722;
+
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    text-align: center;
+    transition:
+        background-color 0.35s ease,
+        transform 0.35s ease;
+}
+
+.step-card:nth-child(4n) {
+    border-right: none;
+}
+
+.step-card:nth-child(n + 5) {
+    border-bottom: none;
+}
+
+.step-card:hover {
+    background-color: #140d09;
+
+    transform: translateY(-5px);
+}
+
+.step-icon {
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 80px;
+line-height: 80px;
+letter-spacing: 0%;
+text-align: center;
+vertical-align: middle;
+width: 60px;
+height: 80px;
+opacity: 1;
+
+    object-fit: contain;
+
+    transition: transform 0.35s ease;
+    color: #C65A23;
+
+}
+
+.step-card:hover .fan-icon {
+    transform: scale(1.1) rotate(3deg);
+}
+
+.step-card h3 {
+    font-family: Anton;
+font-weight: 500;
+font-style: Regular;
+font-size: 45px;
+line-height: 29.7px;
+letter-spacing: 0%;
+text-align: center;
+vertical-align: middle;
+width: 48;
+height: 30;
+opacity: 1;
+color: #EEE9D9;
+
+    transition: color 0.3s ease;
+}
+
+.step-card:hover h3 {
+    color: var(--orange-light);
+}
+
+.step-card p {
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 18px;
+line-height: 16.5px;
+letter-spacing: 0%;
+text-align: center;
+vertical-align: middle;
+width: 178;
+height: 33;
+opacity: 1;
+color: #85857F;
+
+    width: 170px;
+
+    line-height: 1.65;
+}
+
+
+/* ================================================
+                    New Section
+================================================  */
+.hero-4{
+    width: 678;
+height: 1261.2999267578125;
+opacity: 1;
+gap: 19.4px;
+padding-bottom: 40px;
+
+}
+.hero-4 .eyebrow{
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+line-height: 100%;
+letter-spacing: 3px;
+vertical-align: middle;
+width: 678;
+height: 13;
+opacity: 1;
+color: #C16829;
+
+}
+.hero-4 .heading{
+    font-family: Anton;
+font-weight: 400;
+font-style: Regular;
+font-size: 95px;
+line-height: 100px;
+letter-spacing: 2px;
+vertical-align: middle;
+width: 607;
+height: 212;
+opacity: 1;
+color: #EEE9D9;
+
+}
+
+.hero-4 .description{
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 18px;
+line-height: 28.5px;
+letter-spacing: 0%;
+vertical-align: middle;
+width: 525;
+height: 86;
+opacity: 1;
+color: #85857F;
+
+}
+
+
+/* =========================================================
+   PRICING TABLE
+========================================================= */
+
+.hero-4 .pricing-table {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 35px 20px 14px;
+
+    border: 1px solid #683B26;
+    border-radius: 14px;
+
+    background: #0B0D0C;
+    box-shadow: 0 0 35px #77280B22;
+
+    overflow-x: auto;
+}
+
+.pricing-table table {
+    width: 100%;
+    min-width: 600px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+/* TABLE HEADER */
+
+.pricing-table thead {
+    background: transparent;
+}
+
+.pricing-table th {
+    height: 42px;
+    padding: 0 8px 15px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+
+    color: #BA7A45;
+    text-align: left;
+    vertical-align: middle;
+
+    border: none;
+    white-space: nowrap;
+}
+
+/* COLUMN WIDTHS */
+
+.pricing-table th:nth-child(1),
+.pricing-table td:nth-child(1) {
+    width: 8%;
+}
+
+.pricing-table th:nth-child(2),
+.pricing-table td:nth-child(2) {
+    width: 31%;
+}
+
+.pricing-table th:nth-child(3),
+.pricing-table td:nth-child(3) {
+    width: 23%;
+}
+
+.pricing-table th:nth-child(4),
+.pricing-table td:nth-child(4) {
+    width: 17%;
+}
+
+.pricing-table th:nth-child(5),
+.pricing-table td:nth-child(5) {
+    width: 21%;
+}
+
+/* TABLE CELLS */
+
+.pricing-table td {
+    height: 92px;
+    box-sizing: border-box;
+    padding: 15px 8px;
+
+    text-align: left;
+    vertical-align: middle;
+
+    border: none;
+    border-bottom: 1px solid #292722;
+
+    transition: background-color 0.3s ease;
+}
+
+/* REMOVE LAST ROW SEPARATOR */
+
+.pricing-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* TIER NUMBER */
+
+.pricing-table td.col-1 {
+    font-family: "Anton", sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: #ECE8D9;
+}
+
+/* HEAT RANGE */
+
+.pricing-table td.col-2 {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #CBC7BD;
+    white-space: nowrap;
+}
+
+/* POST PRICE */
+
+.pricing-table td.col-3 {
+    font-family: "Inter", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #ECE8D9;
+    white-space: nowrap;
+}
+
+/* HEAT RISE */
+
+.pricing-table .col-4 {
+    font-family: "Inter", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #C5A957;
+    white-space: nowrap;
+}
+
+/* CREATOR SHARE */
+
+.pricing-table .col-5 {
+    font-family: "Inter", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #B68B37;
+    white-space: nowrap;
+}
+
+/* FIRST ROW - FREE TIER */
+
+.pricing-table tbody tr:first-child td {
+    background: #26170D;
+    border-bottom: none;
+}
+
+.pricing-table tbody tr:first-child td.col-1,
+.pricing-table tbody tr:first-child td.col-2,
+.pricing-table tbody tr:first-child td.col-3 {
+    font-size: 30px;
+    color: #F2692D;
+}
+
+
+/* HOVER */
+
+.pricing-table tbody tr:hover td {
+    background-color: #160D09;
+}
+
+.pricing-table tbody tr:first-child:hover td {
+    background-color: #301C10;
+}
+
+.hero-4 .bottom-text{
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 16px;
+line-height: 15px;
+letter-spacing: 0%;
+text-align: center;
+vertical-align: middle;
+width: 272;
+height: 15;
+opacity: 1;
+color: #85857F;
+
+}
+
+
+/* ================================================
+                    New Section
+================================================  */
+.hero-5{
+    width: 678;
+height: 1125;
+opacity: 1;
+gap: 20px;
+
+}
+
+.hero-5 .eyebrow{
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+line-height: 100%;
+letter-spacing: 3px;
+text-align: center;
+vertical-align: middle;
+width: 102;
+height: 13;
+opacity: 1;
+color: #C16829;
+
+}
+
+.hero-5 .heading{
+    font-family: Anton;
+font-weight: 400;
+font-style: Regular;
+font-size: 90px;
+line-height: 98.32px;
+letter-spacing: 0%;
+text-align: center;
+vertical-align: middle;
+width: 499;
+height: 175;
+opacity: 1;
+color: #EEE9D9;
+
+}
+
+/* =========================================================
+   NEW SECTION - FAN GRID
+========================================================= */
+
+.steps-grid {
+height: 897;
+opacity: 1;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    background-color: var(--card-bg);
+
+    overflow: hidden;
+}
+
+.step-card {
+    width: 160;
+height: auto;
+top: 45px;
+opacity: 1;
+padding: 21px 12px 106.21px;
+border-radius: 9px;
+border-width: 1px;
+background: linear-gradient(159.29deg, #171410 0%, #080A09 100%);
+border: 1px solid #55402D;
+box-shadow: 0px 6px 14px 0px #48180722;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    text-align: center;
+    transition:
+        background-color 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+
+.step-card:hover {
+    background-color: #140d09;
+
+    transform: translateY(-5px);
+}
+
+.step-icon {
+
+    width: 58px;
+
+    height: 75px;
+
+    margin-bottom: 22px;
+
+    object-fit: contain;
+
+    transition: transform 0.35s ease;
+}
+
+.step-card:hover .step-icon {
+    transform: scale(1.1) rotate(3deg);
+}
+
+.step-card h3 {
+    font-family: "Antonio", sans-serif;
+
+    font-weight: 500;
+
+    font-size: 30px;
+
+    line-height: 1.02;
+    color: #EEE9D9;
+
+
+    margin-bottom: 16px;
+
+    transition: color 0.3s ease;
+}
+
+.step-card:hover h3 {
+    color: var(--orange-light);
+}
+
+.step-card p {
+    width: 170px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.65;
+
+    color: #85857F;
+
+}
+
+
+/* ================================================
+                    BUILT ON TRUST
+================================================ */
+
+.trust-section {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 60px 2%;
+    background: #050505;
+    color: #ECE8D9;
+
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 35px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* LEFT COLUMN */
+
+.trust-left {
+    min-width: 0;
+    padding-top: 110px;
+}
+
+.trust-section .eyebrow {
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+line-height: 100%;
+letter-spacing: 3px;
+vertical-align: middle;
+color: #C16829;
+    margin-bottom: 18px;
+}
+
+.trust-left h2 {
+    font-family: Anton;
+font-weight: 400;
+font-style: Regular;
+font-size: 75px;
+line-height: 62.64px;
+letter-spacing: 1px;
+vertical-align: middle;
+    margin: 0 0 20px;
+}
+
+.trust-description {
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 20px;
+line-height: 22.5px;
+letter-spacing: 1%;
+vertical-align: middle;
+width: 345;
+height: 68;
+opacity: 1;
+color: #85857F;
+
+}
+
+/* TRUST POINTS */
+
+.trust-points {
+    width: 345;
+    height: 442;
+    opacity: 1;
+    padding-top: 1px;
+    
+}
+
+.trust-item {
+    width: 345;
+height: 73;
+opacity: 1;
+
+    min-height: 77px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 14px 8px;
+    border-bottom: 1px solid #292722;
+}
+
+/* .trust-item:last-child {
+    border-bottom: none;
+} */
+
+.trust-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.trust-item p {
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 19px;
+line-height: 100%;
+letter-spacing: 2%;
+vertical-align: middle;
+width: 183.14358520507812;
+height: 16;
+opacity: 1;
+top: 20px;
+left: 46px;
+color: #97958C;
+
+}
+
+/* RIGHT COLUMN */
+
+.trust-right {
+    min-width: 0;
+    position: relative;
+    padding-top: 0;
+}
+
+.trust-right h3 {
+    font-family: Anton;
+font-weight: 400;
+font-style: Regular;
+font-size: 63px;
+line-height: 70px;
+letter-spacing: 1%;
+vertical-align: middle;
+width: 221;
+height: 193;
+opacity: 1;
+top: -1.19px;
+color: #EEE9D9;
+
+    margin: 0 0 24px;
+}
+
+.trust-right-description {
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 20px;
+line-height: 20px;
+letter-spacing: 0%;
+vertical-align: middle;
+color: #85857F;
+;
+    margin-bottom: 35px;
+}
+
+/* PHONE IMAGE */
+
+.trust-phone {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.trust-phone img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* =========================================================
+   NEW SECTION 
+========================================================= */
+.hero-7{
+    width: 678;
+height: 342;
+opacity: 1;
+padding-right: 45px;
+padding-left: 45px;
+gap: 24px;
+
+}
+.hero-7 .heading{
+    font-family: Anton;
+font-weight: 400;
+font-style: Regular;
+font-size: 70px;
+line-height: 75.6px;
+letter-spacing: -2px;
+vertical-align: middle;
+width: 481;
+height: 227;
+opacity: 1;
+color: #EEE9D9;
+
+}
+
+.hero-7 .description{
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 20px;
+line-height: 24px;
+letter-spacing: 0%;
+vertical-align: middle;
+width: 536;
+height: 48;
+opacity: 1;
+color: #85857F;
+
+}
+
+.hero-7 .bottom-text{
+    font-family: Inter;
+font-weight: 700;
+font-style: Regular;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0%;
+vertical-align: middle;
+width: 351;
+height: 19;
+opacity: 1;
+color: #B2B0A4;
+
+}
+
+
+/* =========================================================
+   NEW SECTION 
+========================================================= */
+
+.hero-8 {
+    width: 100%;
+
+
+    min-height: 560px;
+
+    margin: var(--section-padding) auto 0;
+
+    padding: 70px 60px 45px;
+
+    background: var(--bg);
+
+    border: 2px solid #9e4227;
+
+    border-radius: 70px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 45px rgba(255, 75, 31, 0.12);
+}
+
+.hero-8 h2 {
+    font-family: Anton;
+font-weight: 400;
+font-style: Regular;
+font-size: 90px;
+line-height: 92.7px;
+letter-spacing: 2px;
+text-align: center;
+vertical-align: middle;
+width: 402;
+height: 371;
+opacity: 1;
+color: #EEE9D9;
+
+}
+
+.hero-8 .description {
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 18px;
+line-height: 19.5px;
+letter-spacing: 0%;
+text-align: center;
+vertical-align: middle;
+width: 284;
+height: 39;
+opacity: 1;
+color: #85857F;
+
+}
+
+.hero-8-buttons {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 40px;
+}
+
+.hero-8 .becomecreator {
+    font-family: Inter;
+font-weight: 600;
+font-style: Regular;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+vertical-align: middle;
+width: 104;
+height: 15;
+opacity: 1;
+color: #FFFFFF;
+width: 152;
+height: 47;
+opacity: 1;
+box-shadow: 0px 0px 24px 0px #F0442444;
+background: #F54B22;
+
+
+    padding: 16px 24px;
+
+    border: none;
+
+    border-radius: 40px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.hero-8 .becomecreator:hover {
+    background: var(--orange-light);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(255, 75, 31, 0.3);
+}
+
+.hero-8 .app {
+    padding: 17px 38px;
+
+    border: 1px solid #333333;
+
+    border-radius: 40px;
+
+    color: #FFFFFF;
+
+    text-decoration: none;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+    transition: all 0.3s ease;
+}
+
+.hero-8 .app:hover {
+    border-color: #777777;
+
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+.hero-8 .bottom-text {
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 18px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+vertical-align: middle;
+width: 110;
+height: 17;
+opacity: 1;
+color: #BD9D42;
+
+}
+
+
+/* TABLET */
+
+@media (max-width: 768px) {
+    .trust-section {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        padding: 50px 4%;
+    }
+
+    .trust-left {
+        padding-top: 60px;
+    }
+
+    .trust-left h2 {
+        font-size: clamp(36px, 6vw, 48px);
+    }
+
+    .trust-right h3 {
+        font-size: clamp(30px, 5vw, 38px);
+    }
+
+    .trust-item {
+        gap: 12px;
+        padding: 12px 4px;
+    }
+
+    .trust-item p {
+        font-size: 12px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 520px) {
+    .trust-section {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding: 45px 20px;
+    }
+
+    .trust-left {
+        padding-top: 0;
+    }
+
+    .trust-left h2 {
+        font-size: 46px;
+    }
+
+    .trust-description {
+        font-size: 14px;
+    }
+
+    .trust-item {
+        min-height: 72px;
+    }
+
+    .trust-right h3 {
+        font-size: 40px;
+    }
+
+    .trust-phone {
+        max-width: 280px;
+    }
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+    .hero-4 .pricing-table {
+        max-width: 100%;
+        padding: 24px 14px 12px;
+    }
+
+    .pricing-table table {
+        min-width: 600px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+    .hero-4 .pricing-table {
+        padding: 20px 10px 10px;
+    }
+
+    .pricing-table table {
+        min-width: 580px;
+    }
+}
+
+/* =========================
+   CREATOR HEAT CARD
+========================= */
+
+.heat-card {
+    min-height: 460px;
+
+    padding: clamp(24px, 3.5vw, 44px);
+
+    border: 1px solid #513018;
+    border-radius: 23px;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 28%,
+            #17140c 0,
+            #0b0b09 58%,
+            #080808 100%
+        );
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    min-width: 0;
+}
+
+.heat-label {
+    margin: 0;
+
+    color: #9b7a3c;
+    font-size: clamp(11px, 1.2vw, 13px);
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.heat-number {
+    margin: 24px 0 10px;
+
+    font-family: "Anton", "Antonio", Impact, sans-serif;
+    font-size: clamp(72px, 12vw, 120px);
+
+    color: var(--gold);
+    line-height: 1;
+}
+
+.heat-subtitle {
+    margin: 0;
+    color: #d1cdc2;
+    font-size: clamp(14px, 1.5vw, 17px);
+}
+
+.price {
+    width: 100%;
+
+    margin-top: 28px;
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid #27241d;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 6px 12px;
+
+    color: #8e8a80;
+    font-size: clamp(13px, 1.4vw, 16px);
+    text-align: left;
+}
+
+.price strong {
+    color: #eee8d9;
+    font-weight: 600;
+    text-align: right;
+}
+
+.card-footer {
+    margin: auto 0 0;
+    padding-top: 32px;
+
+    color: #806a3a;
+    font-size: clamp(11px, 1.2vw, 13px);
+    letter-spacing: 0.1em;
+}
+
+.bottom-note {
+    margin: 22px 0 0;
+    color: #5b574e;
+    font-size: clamp(13px, 1.4vw, 15px);
+    line-height: 1.5;
+}
+
+
+/* =========================
+   LARGE SCREENS
+========================= */
+
+@media (min-width: 1200px) {
+
+    .hero-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =========================
+   TABLETS AND MOBILE
+========================= */
+
+@media (max-width: 760px) {
+
+    .navbar {
+        min-height: 68px;
+        padding: 10px 18px;
+        gap: 10px;
+    }
+
+    .logo img {
+        width: 64px;
+    }
+
+    .nav-toggle {
+        display: flex;
+        order: 3;
+    }
+
+    /* Join button stays visible, pushed next to the hamburger */
+    .navbar > .button {
+        order: 2;
+        margin-left: auto;
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    /* Links become a dropdown panel */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 12px;
+        right: 12px;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 6px 18px 12px;
+
+        background: rgba(11, 10, 9, 0.98);
+        border: 1px solid #513018;
+        border-radius: 14px;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        pointer-events: none;
+
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    }
+
+    .navbar.open .nav-links {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        pointer-events: auto;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 14px 4px;
+        font-size: 16px;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .hero {
+        padding-top: 56px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    h1 {
+        max-width: 560px;
+    }
+
+    .heat-card {
+        min-height: 0;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE SCREENS
+========================= */
+
+@media (max-width: 480px) {
+
+    .hero-1 {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .hero-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .hero-actions .button {
+        width: 100%;
+        padding: 15px 14px;
+    }
+
+    .heat-card {
+        padding: 27px 20px;
+    }
+
+}
+
+@media (max-width: 360px) {
+
+    .navbar > .button {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+}
+
+
+/* =========================
+   TOUCH DEVICES
+========================= */
+
+@media (hover: none) {
+    .button:hover,
+    .logo img:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+
+
+/* =========================
+   PRESENTATION POLISH
+========================= */
+
+.navbar {
+    position: relative; /* scrolls away with the page */
+}
+
+.hero-1 {
+    min-height: calc(100svh - 82px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: clamp(40px, 6vw, 80px);
+    padding-bottom: clamp(40px, 6vw, 80px);
+}
+
+.bottom-note {
+    text-align: center;
+    margin-top: clamp(32px, 5vw, 56px);
+}
+
+.site-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px 30px;
+    padding: 24px clamp(18px, 5.5vw, 80px);
+    border-top: 1px solid #191919;
+    color: #777;
+    font-size: 14px;
+}
+
+.site-footer p { margin: 0; }
+.site-footer .logo img { width: 90px; }
+
+.footer-links {
+    display: flex;
+    gap: 28px;
+}
+
+.footer-links a:hover { color: var(--orange); }
+
+@media (max-width: 760px) {
+    .hero { min-height: 0; }
+    .site-footer { flex-direction: column; text-align: center; }
+}

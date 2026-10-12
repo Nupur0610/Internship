@@ -1,0 +1,907 @@
+/* =========================================================
+   GO VIRAL - CREATOR PAGE STYLES
+   Simple layout: one spacing rule for every section,
+   three breakpoints (1024px, 768px, 480px).
+========================================================= */
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #f4f1e8;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ---------- VARIABLES ---------- */
+
+:root {
+    --bg: #050505;
+    --orange: #ff4b26;
+    --orange-light: #ff633b;
+    --cream: #eee9d9;
+    --muted: #85857f;
+    --eyebrow: #c16829;
+    --card-border: #55402d;
+
+    /* Gap between two sections. Each section uses half of it
+       on top and half on bottom, so every gap is the same. */
+    --gap: 90px;
+    --side: 5.5%;
+}
+
+.page-shell {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+main {
+    padding: 0 var(--side);
+}
+
+
+/* ---------- EVERY SECTION USES THE SAME SPACING ---------- */
+
+main > section {
+    padding: calc(var(--gap) / 2) 0;
+}
+
+
+/* ---------- COMMON TEXT ---------- */
+
+.eyebrow {
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--eyebrow);
+    margin-bottom: 20px;
+}
+
+.heading,
+h1,
+h2 {
+    font-family: "Anton", "Antonio", Impact, sans-serif;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.1;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: relative;
+    z-index: 10;
+
+    min-height: 82px;
+    padding: 15px var(--side);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    border-bottom: 1px solid #191919;
+}
+
+.logo img {
+    width: 90px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    color: #c4c1b9;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+/* hamburger button - only shown on small screens */
+.nav-toggle {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 14px 24px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.button-primary {
+    background: var(--orange);
+    color: white;
+}
+
+.button-primary:hover {
+    background: var(--orange-light);
+}
+
+.button-secondary {
+    border-color: #484137;
+    background: #11100e;
+    color: #eee9df;
+}
+
+.button-secondary:hover {
+    border-color: #777;
+}
+
+
+/* =========================================================
+   HERO (text + heat card)
+========================================================= */
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-copy {
+    min-width: 0;
+}
+
+.hero-1 h1 {
+    font-size: clamp(40px, 6.5vw, 76px);
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+}
+
+.hero-description {
+    max-width: 560px;
+    font-size: 19px;
+    line-height: 1.55;
+    color: #85857f;
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.microcopy {
+    font-size: 14px;
+    color: #74746c;
+    margin-top: 25px;
+}
+
+/* ---------- HEAT CARD ---------- */
+
+.heat-card {
+    padding: 30px;
+    background: #0a0a09;
+    border: 1px solid #3a3022;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.heat-label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #a65a2b;
+}
+
+.heat-number {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(70px, 9vw, 100px);
+    line-height: 1.1;
+    color: #e5c66f;
+    margin: 10px 0;
+}
+
+.heat-subtitle {
+    font-size: 15px;
+    color: #cbc7bd;
+    margin-bottom: 25px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    padding: 14px 0;
+    border-bottom: 1px solid #24211b;
+    font-size: 14px;
+    text-align: left;
+}
+
+.price span {
+    color: var(--muted);
+}
+
+.price strong {
+    color: white;
+    text-align: right;
+}
+
+.card-footer {
+    margin-top: 30px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #6f6c64;
+}
+
+
+/* =========================================================
+   CREATORS ROW
+========================================================= */
+
+.hero-2 .heading {
+    font-size: clamp(40px, 6.5vw, 90px);
+    margin-bottom: 20px;
+}
+
+.hero-2 .description {
+    margin-bottom: 30px;
+}
+
+.creators-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+}
+
+.creator-card {
+    min-width: 0;
+    padding-bottom: 18px;
+
+    border: 1px solid #54402b;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #080808;
+}
+
+.creator-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.creator-card h3 {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: var(--cream);
+    margin: 16px 12px 8px;
+}
+
+.creator-card .pos {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0 12px 10px;
+}
+
+.creator-card .reach {
+    font-size: 20px;
+    font-weight: 700;
+    color: #c6aa65;
+    margin: 0 12px;
+}
+
+
+/* =========================================================
+   HOW IT WORKS + TOOLKIT (cards)
+========================================================= */
+
+.hero-3 .heading,
+.hero-5 .heading {
+    font-size: clamp(40px, 6.5vw, 90px);
+    margin-bottom: 20px;
+}
+
+.hero-3 .description {
+    margin-bottom: 30px;
+}
+
+.hero-5 .heading {
+    margin-bottom: 30px;
+}
+
+.steps-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.hero-3 .steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.hero-5 .steps-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.step-card {
+    padding: 28px 20px;
+    text-align: center;
+
+    background: linear-gradient(150deg, #171410 0%, #080a09 100%);
+    border: 1px solid var(--card-border);
+    border-radius: 9px;
+}
+
+.step-icon {
+    width: 58px;
+    height: 75px;
+    object-fit: contain;
+    margin: 0 auto 20px;
+}
+
+.step-card h3 {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 14px;
+}
+
+.step-card p {
+    max-width: 240px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   HEAT MARKET + PRICING TABLE
+========================================================= */
+
+.hero-4 .heading {
+    font-size: clamp(40px, 6.5vw, 90px);
+    margin-bottom: 20px;
+}
+
+.hero-4 .description {
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+.pricing-table {
+    padding: 25px 20px 10px;
+    background: #0b0d0c;
+    border: 1px solid #683b26;
+    border-radius: 14px;
+}
+
+.pricing-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pricing-table th {
+    padding: 0 8px 15px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    color: #ba7a45;
+}
+
+.pricing-table td {
+    padding: 22px 8px;
+    border-bottom: 1px solid #292722;
+    text-align: left;
+}
+
+.pricing-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.pricing-table td.col-1 {
+    font-family: "Anton", sans-serif;
+    font-size: 26px;
+    color: #ece8d9;
+}
+
+.pricing-table td.col-2 {
+    font-size: 16px;
+    color: #cbc7bd;
+}
+
+.pricing-table td.col-3 {
+    font-size: 22px;
+    color: #ece8d9;
+}
+
+.pricing-table td.col-4 {
+    font-size: 22px;
+    color: #c5a957;
+}
+
+.pricing-table td.col-5 {
+    font-size: 22px;
+    color: #b68b37;
+}
+
+/* first row = free tier */
+.pricing-table tbody tr:first-child td {
+    background: #26170d;
+    border-bottom: none;
+}
+
+.pricing-table tbody tr:first-child td.col-1,
+.pricing-table tbody tr:first-child td.col-2,
+.pricing-table tbody tr:first-child td.col-3 {
+    color: #f2692d;
+}
+
+.hero-4 .bottom-text {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   BUILT ON TRUST
+========================================================= */
+
+.trust-section {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.trust-left,
+.trust-right {
+    min-width: 0;
+}
+
+.trust-left h2 {
+    font-size: clamp(44px, 6vw, 75px);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.trust-description {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 18px 8px;
+    border-bottom: 1px solid #292722;
+}
+
+.trust-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.trust-item p {
+    font-size: 17px;
+    line-height: 1.4;
+    color: #97958c;
+}
+
+.trust-right h3 {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-size: clamp(34px, 4.5vw, 58px);
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 20px;
+}
+
+.trust-right-description {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin-bottom: 30px;
+}
+
+.trust-phone {
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   CLOSING TEXT + FINAL CTA BOX
+========================================================= */
+
+.hero-7 .heading {
+    font-size: clamp(36px, 5.5vw, 70px);
+    margin-bottom: 20px;
+}
+
+.hero-7 .description {
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.hero-7 .bottom-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #b2b0a4;
+}
+
+.hero-8 {
+    margin: 0 0 calc(var(--gap) / 2);
+    padding: 70px 40px;
+
+    border: 2px solid #9e4227;
+    border-radius: 60px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* the box sits between two sections, so it gets its own margin
+   instead of the section padding */
+main > section.hero-8 {
+    margin: calc(var(--gap) / 2) 0;
+    padding: 70px 40px;
+}
+
+.hero-8 h2 {
+    font-size: clamp(40px, 6vw, 90px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero-8 .description {
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.hero-8-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.hero-8 .becomecreator {
+    padding: 16px 28px;
+    border: none;
+    border-radius: 40px;
+    background: #f54b22;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.hero-8 .becomecreator:hover {
+    background: var(--orange-light);
+}
+
+.hero-8 .app {
+    padding: 15px 38px;
+    border: 1px solid #333;
+    border-radius: 40px;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.hero-8 .app:hover {
+    border-color: #777;
+}
+
+.hero-8 .bottom-text {
+    font-size: 18px;
+    color: #bd9d42;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    padding: 25px var(--side);
+    border-top: 1px solid #191919;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.site-footer .logo img {
+    width: 90px;
+}
+
+.site-footer p {
+    font-size: 13px;
+    text-align: center;
+    color: #77756e;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+    font-size: 14px;
+    color: #77756e;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+
+/* =========================================================
+   TABLET  (up to 1024px)
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    :root {
+        --gap: 76px;
+    }
+
+    .hero-grid {
+        gap: 35px;
+    }
+
+    .creators-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero-3 .steps-grid,
+    .hero-5 .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-3 .steps-grid .step-card {
+        padding: 25px 15px;
+    }
+
+    .trust-section {
+        gap: 30px;
+    }
+
+    .pricing-table td.col-3,
+    .pricing-table td.col-4,
+    .pricing-table td.col-5 {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE  (up to 768px)
+========================================================= */
+
+@media (max-width: 768px) {
+
+    :root {
+        --gap: 60px;
+    }
+
+    /* navbar becomes a hamburger menu */
+    .nav-toggle {
+        display: flex;
+        order: 3;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+
+        padding: 20px var(--side) 25px;
+        background: #0b0b0a;
+        border-bottom: 1px solid #24211b;
+    }
+
+    .navbar.open .nav-links {
+        display: flex;
+    }
+
+    /* push the menu button to the right, next to the join button */
+    .navbar .button {
+        margin-left: auto;
+        padding: 11px 18px;
+        font-size: 14px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-description,
+    .description,
+    .trust-description,
+    .trust-right-description {
+        font-size: 16px;
+    }
+
+    .hero-3 .steps-grid,
+    .hero-5 .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .step-card p {
+        max-width: 320px;
+    }
+
+    /* table fits the screen, no side scroll */
+    .pricing-table {
+        padding: 15px 8px 5px;
+    }
+
+    .pricing-table th {
+        padding: 0 4px 12px;
+        font-size: 11px;
+    }
+
+    .pricing-table td {
+        padding: 14px 4px;
+    }
+
+    .pricing-table td.col-1 { font-size: 20px; }
+    .pricing-table td.col-2 { font-size: 12px; }
+    .pricing-table td.col-3,
+    .pricing-table td.col-4,
+    .pricing-table td.col-5 { font-size: 15px; }
+
+    .trust-section {
+        grid-template-columns: 1fr;
+    }
+
+    .trust-item p {
+        font-size: 15px;
+    }
+
+    main > section.hero-8 {
+        padding: 50px 22px;
+        border-radius: 36px;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        gap: 18px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES  (up to 480px)
+========================================================= */
+
+@media (max-width: 480px) {
+
+    :root {
+        --gap: 48px;
+        --side: 5%;
+    }
+
+    .logo img {
+        width: 70px;
+    }
+
+    .eyebrow {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .hero-actions .button {
+        width: 100%;
+    }
+
+    .heat-card {
+        padding: 22px 16px;
+    }
+
+    .creators-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .creator-card h3 {
+        font-size: 20px;
+        margin: 12px 10px 6px;
+    }
+
+    .creator-card .pos,
+    .creator-card .reach {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .creator-card .reach {
+        font-size: 17px;
+    }
+
+    .hero-8-buttons a,
+    .hero-8-buttons button {
+        width: 100%;
+        text-align: center;
+    }
+}
