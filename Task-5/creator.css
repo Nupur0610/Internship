@@ -1,8 +1,3 @@
-/* =========================================================
-   GO VIRAL - CREATOR PAGE STYLES
-   Simple layout: one spacing rule for every section,
-   three breakpoints (1024px, 768px, 480px).
-========================================================= */
 
 /* ---------- RESET ---------- */
 
@@ -46,8 +41,7 @@ a {
     --eyebrow: #c16829;
     --card-border: #55402d;
 
-    /* Gap between two sections. Each section uses half of it
-       on top and half on bottom, so every gap is the same. */
+    
     --gap: 90px;
     --side: 5.5%;
 }
@@ -358,14 +352,18 @@ h2 {
 .hero-5 .heading {
     font-size: clamp(40px, 6.5vw, 90px);
     margin-bottom: 20px;
+    
 }
 
 .hero-3 .description {
     margin-bottom: 30px;
 }
-
+.hero-5 .eyebrow{
+    text-align: center;
+}
 .hero-5 .heading {
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .steps-grid {
@@ -598,77 +596,218 @@ h2 {
     color: #b2b0a4;
 }
 
+/* =========================
+   GLOWING CTA SECTION
+========================= */
+
 .hero-8 {
+    position: relative;
+    overflow: hidden;
+
     margin: 0 0 calc(var(--gap) / 2);
     padding: 70px 40px;
 
-    border: 2px solid #9e4227;
-    border-radius: 60px;
+    border: 2px solid #492516;
+    border-radius: 30px;
+
     text-align: center;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* background: linear-gradient(0deg, #080908, #080908),
+    radial-gradient(141.42% 141.42% at 100% 100%, #4B1B0D 0%, rgba(75, 27, 13, 0) 55%); */
+    
+    /* Dark background with orange glow */
+    background:
+    radial-gradient(
+        141.42% 141.42% at 100% 100%,
+        #4B1B0D 0%,
+        rgba(75, 27, 13, 0) 55%
+    ),
+    #080908;
+
+    /* Subtle outer glow */
+    box-shadow:
+        0 0 20px rgba(244, 84, 23, 0.05),
+        0 0 35px rgba(244, 84, 23, 0.08);
+
+    color: #ece8d9;
+    box-sizing: border-box;
 }
 
-/* the box sits between two sections, so it gets its own margin
-   instead of the section padding */
+/* SECTION SPACING */
+
 main > section.hero-8 {
     margin: calc(var(--gap) / 2) 0;
     padding: 70px 40px;
 }
 
+/* HEADING */
+
 .hero-8 h2 {
+    font-family: Anton;
+    font-weight: 500;
+
     font-size: clamp(40px, 6vw, 90px);
     line-height: 1.05;
-    margin-bottom: 25px;
+    letter-spacing: -1px;
+
+    margin: 0 0 25px;
+    color: #ece8d9;
+
+    position: relative;
+    z-index: 1;
 }
+
+/* DESCRIPTION */
 
 .hero-8 .description {
     max-width: 600px;
-    margin-bottom: 30px;
+    margin: 0 0 30px;
+
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #85817b;
+
+    position: relative;
+    z-index: 1;
 }
+
+/* BUTTON CONTAINER */
 
 .hero-8-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 14px;
+
     margin-bottom: 30px;
+
+    position: relative;
+    z-index: 1;
 }
 
+/* BECOME A CREATOR BUTTON */
+
 .hero-8 .becomecreator {
-    padding: 16px 28px;
+    padding: 14px 28px;
+
     border: none;
     border-radius: 40px;
+
     background: #f54b22;
     color: white;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
+
+    font-family: Inter, sans-serif;
+    font-size: 14px;
     font-weight: 600;
+
     cursor: pointer;
+    transition: background 0.2s ease;
 }
 
 .hero-8 .becomecreator:hover {
     background: var(--orange-light);
 }
 
+/* GET THE APP BUTTON */
+
 .hero-8 .app {
-    padding: 15px 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 28px;
+
     border: 1px solid #333;
     border-radius: 40px;
+
+    background: rgba(8, 9, 8, 0.6);
     color: white;
-    font-size: 17px;
+
+    font-family: Inter, sans-serif;
+    font-size: 14px;
     font-weight: 500;
+
+    text-decoration: none;
+    transition: border-color 0.2s ease;
 }
 
 .hero-8 .app:hover {
     border-color: #777;
 }
 
+/* BOTTOM TEXT */
+
 .hero-8 .bottom-text {
-    font-size: 18px;
+    margin: 0;
+
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+
     color: #bd9d42;
+
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+    .hero-8,
+    main > section.hero-8 {
+        padding: 55px 30px;
+    }
+
+    .hero-8 h2 {
+        font-size: clamp(40px, 7vw, 65px);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+    .hero-8,
+    main > section.hero-8 {
+        margin: 25px 0;
+        padding: 45px 20px;
+
+        border-radius: 24px;
+    }
+
+    .hero-8 h2 {
+        font-size: clamp(36px, 10vw, 52px);
+        line-height: 1.05;
+        letter-spacing: -0.5px;
+    }
+
+    .hero-8 .description {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .hero-8-buttons {
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    .hero-8 .becomecreator,
+    .hero-8 .app {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .hero-8 .bottom-text {
+        font-size: 12px;
+    }
 }
 
 
