@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Liberation Cocktails</title>
+
+    <!-- Google Fonts (one link for all fonts used) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <div class="left_nav">
+
+                <div class="dropdown">
+                    <a href="#" class="head">
+                        CANS
+                        <img src="images/SVG.png" alt="" class="dropdown-icon">
+                    </a>
+
+                    <div class="dropdown-menu">
+                        <a href="#">CAN-1</a>
+                        <a href="#">CAN-2</a>
+                        <a href="#">CAN-3</a>
+                    </div>
+                </div>
+
+                <a href="#" class="head">POUCHES</a>
+                <a href="#" class="head">PARTY KEGS</a>
+                <a href="#" class="head">BARWARE</a>
+
+            </div>
+
+            <a href="#" class="logo">
+                <img src="images/Heading 1 → Link → Liberation Cocktails.png" alt="Liberation Cocktails">
+            </a>
+
+            <div class="nav-right">
+
+                <a href="#" class="head cruiser">COCKTAIL CRUISER</a>
+
+                <div class="dropdown trade-dropdown">
+
+                    <a href="#" class="trade-button">
+                        TRADE | ON-TAP &amp; FROZEN
+                        <span>▼</span>
+                    </a>
+
+                    <div class="dropdown-menu">
+                        <a href="#">TRADE</a>
+                        <a href="#">ON-TAP</a>
+                        <a href="#">FROZEN</a>
+                    </div>
+
+                </div>
+
+                <a href="#" class="nav-icon">
+                    <img src="images/Link → Icon.png" alt="Language">
+                </a>
+
+                <a href="#" class="nav-icon">
+                    <img src="images/Link → SVG.png" alt="Shopping bag">
+                </a>
+
+            </div>
+
+        </nav>
+
+        <!-- ANNOUNCEMENT SLIDER -->
+        <section class="announcement">
+
+            <div class="announcement-track">
+
+                <div class="announcement-group">
+                    <a href="#">SIGN UP &amp; GET 10% OFF</a>
+                    <a href="#">GET YOUR TRIAL PACK TODAY</a>
+                    <a href="#">FREE NEXT-DAY UK MAINLAND DELIVERY ON ORDERS OVER £35!</a>
+                </div>
+
+                <!-- duplicate for seamless loop -->
+                <div class="announcement-group" aria-hidden="true">
+                    <a href="#">SIGN UP &amp; GET 10% OFF</a>
+                    <a href="#">GET YOUR TRIAL PACK TODAY</a>
+                    <a href="#">FREE NEXT-DAY UK MAINLAND DELIVERY ON ORDERS OVER £35!</a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO VIDEO
+        ========================= -->
+        <section class="main">
+            <div class="bg">
+                <video autoplay muted loop playsinline preload="auto">
+                    <source src="videos/hero.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+
+        <!-- =========================
+             COCKTAIL CATEGORIES
+        ========================= -->
+        <section class="grade-section">
+
+            <div class="grade-heading">
+                <h2>MIXOLOGIST-GRADE COCKTAILS</h2>
+                <p class="subtitle">ready to drink - whenever, wherever</p>
+            </div>
+
+            <div class="category-grid">
+
+                <!-- CANS -->
+                <div class="category-card">
+                    <p class="category-title">CANS</p>
+                    <div class="product-image">
+                        <img src="images/Picture → Ready mixed cocktails in a can.png" alt="Liberation cocktail cans">
+                    </div>
+                    <a href="#" class="shop-button">SHOP CANS</a>
+                </div>
+
+                <!-- POUCHES -->
+                <div class="category-card">
+                    <p class="category-title">POUCHES</p>
+                    <div class="product-image">
+                        <img src="images/Picture → Premixed, Ready To Drink Cocktails In A Pouch.png" alt="Liberation cocktail pouches">
+                    </div>
+                    <a href="#" class="shop-button">SHOP POUCHES</a>
+                </div>
+
+                <!-- PARTY KEGS -->
+                <div class="category-card">
+                    <p class="category-title">PARTY KEGS</p>
+                    <div class="product-image">
+                        <img src="images/Picture → Ready To Serve Cocktail party kegs.png" alt="Liberation cocktail party kegs">
+                    </div>
+                    <a href="#" class="shop-button">SHOP PARTY KEGS</a>
+                </div>
+
+                <!-- ON-TAP -->
+                <div class="category-card">
+                    <p class="category-title">ON-TAP</p>
+                    <div class="product-image">
+                        <img src="images/Picture → On-Tap Cocktails.png" alt="Liberation cocktails on tap">
+                    </div>
+                    <a href="#" class="shop-button">SHOP ON-TAP</a>
+                </div>
+
+                <!-- FROZEN -->
+                <div class="category-card">
+                    <p class="category-title">FROZEN | BAG IN BOX</p>
+                    <div class="product-image">
+                        <img src="images/Picture → FROZEN COCKTAILS.png" alt="Liberation frozen cocktails">
+                    </div>
+                    <a href="#" class="shop-button">SHOP FROZEN</a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             NEWSLETTER 1
+        ========================= -->
+        <section class="newsletter">
+
+            <h2>SIGN UP &amp; GET 10% OFF ON YOUR FIRST ORDER</h2>
+
+            <form class="newsletter-form">
+
+                <label class="email-field">
+                    <span class="email-icon"><img src="images/envelop.png" alt=""></span>
+                    <input
+                        class="email-input"
+                        type="email"
+                        placeholder="your email..."
+                        aria-label="Your email address"
+                        required
+                    >
+                </label>
+
+                <button type="submit" class="submit-button">
+                    SUBMIT <span>→</span>
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- =========================
+             PROMOTIONAL SECTION
+        ========================= -->
+        <section class="promo-section">
+
+            <!-- BLACK TEXT PANEL -->
+            <div class="promo-card promo-text">
+                <h2>THE FUTURE OF COCKTAILS NOW</h2>
+
+                <p>
+                    We believe great cocktails shouldn't be locked
+                    behind the bar.
+                </p>
+
+                <p>
+                    No bartender? No fuss. Enjoy our mixologist-grade
+                    cocktails that are pre-mixed, bar strength and
+                    ready when you are.
+                </p>
+            </div>
+
+            <!-- LIFESTYLE IMAGE 1 -->
+            <div class="promo-card promo-image">
+                <img src="images/Picture → 1_bf0a7340-04ec-49d3-87b1-22a467f62776.jpg.png" alt="Liberation cocktail cans">
+            </div>
+
+            <!-- LIFESTYLE IMAGE 2 -->
+            <div class="promo-card promo-image">
+                <img src="images/Picture → 3_9f26e908-ec21-4e69-ae1e-2657116fbbb6.jpg.png" alt="Liberation cocktail pouch">
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ON-TAP
+        ========================= -->
+        <section class="ontap">
+
+            <div class="ontap-left">
+
+                <h2>BAR QUALITY COCKTAILS ON-TAP?</h2>
+
+                <p>
+                    Our revolutionary on-tap system guarantees bar-quality pours at speed,
+                    every time. Join the growing cocktail revolution!
+                </p>
+
+                <a href="#" class="dark-button">
+                    EXPLORE ON-TAP COCKTAILS <span>→</span>
+                </a>
+
+            </div>
+
+            <div class="ontap-right">
+                <video class="ontap-video" autoplay muted loop playsinline>
+                    <source src="videos/ontap.mp4" type="video/mp4">
+                </video>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FIND US IN
+        ========================= -->
+        <section class="find-us">
+
+            <p class="find-heading">FIND US IN</p>
+
+            <div class="logo-track">
+
+                <div class="logo-group">
+                    <img src="images/oval.png" alt="The Oval">
+                    <img src="images/abba.png" alt="ABBA Voyage">
+                    <img src="images/lansdowne.png" alt="Lansdowne Club">
+                    <img src="images/champneys.png" alt="Champneys">
+                    <img src="images/wembley.png" alt="Wembley">
+                    <img src="images/hackney.png" alt="Hackney Empire">
+                    <img src="images/allianz.png" alt="Allianz Stadium">
+                    <img src="images/marriott.png" alt="Marriott">
+                    <img src="images/skylagoon.png" alt="Sky Lagoon">
+                </div>
+
+                <!-- duplicate for seamless loop -->
+                <div class="logo-group" aria-hidden="true">
+                    <img src="images/oval.png" alt="">
+                    <img src="images/abba.png" alt="">
+                    <img src="images/lansdowne.png" alt="">
+                    <img src="images/champneys.png" alt="">
+                    <img src="images/wembley.png" alt="">
+                    <img src="images/hackney.png" alt="">
+                    <img src="images/allianz.png" alt="">
+                    <img src="images/marriott.png" alt="">
+                    <img src="images/skylagoon.png" alt="">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MAKE YOUR MOMENT
+        ========================= -->
+        <section class="moments">
+
+            <h2 class="display-heading">MAKE YOUR MOMENT</h2>
+
+            <p class="subtitle-sm">
+                when the moment calls for a cocktail, timing is <em>everything.</em>
+            </p>
+
+            <div class="moment-grid">
+
+                <div class="moment-card">
+                    <div class="moment-media">
+                        <video src="videos/v1.mp4" autoplay muted loop playsinline></video>
+                        <button class="play" type="button" aria-label="Play video"></button>
+                    </div>
+                    <a href="#" class="moment-label">That Party Moment</a>
+                </div>
+
+                <div class="moment-card">
+                    <div class="moment-media">
+                        <video src="videos/v2.mp4" autoplay muted loop playsinline></video>
+                        <button class="play" type="button" aria-label="Play video"></button>
+                    </div>
+                    <a href="#" class="moment-label">That Gym Moment</a>
+                </div>
+
+                <div class="moment-card">
+                    <div class="moment-media">
+                        <video src="videos/v3.mp4" autoplay muted loop playsinline></video>
+                        <button class="play" type="button" aria-label="Play video"></button>
+                    </div>
+                    <a href="#" class="moment-label">That Picnic Moment</a>
+                </div>
+
+                <div class="moment-card">
+                    <div class="moment-media">
+                        <video src="videos/v4.mp4" autoplay muted loop playsinline></video>
+                        <button class="play" type="button" aria-label="Play video"></button>
+                    </div>
+                    <a href="#" class="moment-label">That Festival Moment</a>
+                </div>
+
+                <div class="moment-card">
+                    <div class="moment-media">
+                        <video src="videos/v5.mp4" autoplay muted loop playsinline></video>
+                        <button class="play" type="button" aria-label="Play video"></button>
+                    </div>
+                    <a href="#" class="moment-label">That Out 'n' About Moment</a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             WHAT OUR CUSTOMERS SAY
+        ========================= -->
+        <section class="rv-section">
+
+            <h2 class="rv-title">WHAT OUR CUSTOMERS SAY</h2>
+            <p class="rv-count"><span class="rv-stars">★★★★★</span> 1167 REVIEWS</p>
+
+            <div class="rv-slider">
+                <div class="rv-track">
+                    <div class="rv-group">
+
+                        <div class="rv-card">
+                            <div class="rv-head">
+                                <span class="rv-name">Alix G. <i class="rv-check">✔</i> Verified Buyer</span>
+                                <span class="rv-date">10/15/26</span>
+                            </div>
+                            <div class="rv-stars">★★★★★</div>
+                            <h3 class="rv-card-title">The only place we can</h3>
+                            <p class="rv-card-text">The only place we can buy pisco in a can, and iy doesnt disappoint, great service would highly recommend 👌</p>
+                            <p class="rv-product">Pisco Sour 150ml Can Pack</p>
+                        </div>
+
+                        <div class="rv-card">
+                            <div class="rv-head">
+                                <span class="rv-name">Christina M. <i class="rv-check">✔</i> Verified Buyer</span>
+                                <span class="rv-date">10/09/26</span>
+                            </div>
+                            <div class="rv-stars">★★★★★</div>
+                            <h3 class="rv-card-title">The cocktail are wonderful thank</h3>
+                            <p class="rv-card-text">The cocktail are wonderful thank you</p>
+                            <p class="rv-product">Cocktail Shaker</p>
+                        </div>
+
+                        <div class="rv-card">
+                            <div class="rv-head">
+                                <span class="rv-name">Christina M. <i class="rv-check">✔</i> Verified Buyer</span>
+                                <span class="rv-date">10/09/26</span>
+                            </div>
+                            <div class="rv-stars">★★★★★</div>
+                            <h3 class="rv-card-title">Superb cocktails thank you</h3>
+                            <p class="rv-card-text">Superb cocktails thank you</p>
+                            <p class="rv-product">Create your own box</p>
+                        </div>
+
+                        <div class="rv-card">
+                            <div class="rv-head">
+                                <span class="rv-name">Gavin B. <i class="rv-check">✔</i> Verified Buyer</span>
+                                <span class="rv-date">10/08/26</span>
+                            </div>
+                            <div class="rv-stars">★★★★★</div>
+                            <h3 class="rv-card-title">Great idea</h3>
+                            <p class="rv-card-text">Great idea, the cans got me through the party.</p>
+                            <p class="rv-product">Pornstar Martini 150ml Can Pack</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="rv-btn">ALL REVIEWS <span>→</span></a>
+
+        </section>
+
+
+        <!-- =========================
+             COCKTAIL CRUISER
+        ========================= -->
+        <section class="cr-section">
+
+            <div class="cr-copy">
+                <p class="cr-eyebrow">ORGANISING THE ULTIMATE PARTY?</p>
+                <h2 class="cr-heading">INTRODUCING THE <br> COCKTAIL CRUISER</h2>
+                <p class="cr-text">
+                    Meet the ultimate party on wheels. The Liberation Cocktail Cruiser rolls up with a full bar, bartender, and our award-winning cocktails on tap. Ready to serve weddings, festivals, and private events across the UK.
+                </p>
+                <p class="cr-text">Bring the bar to you and make your moment unforgettable.</p>
+                <a href="#" class="cr-button">BOOK NOW <span>→</span></a>
+            </div>
+
+            <video class="cr-video" src="videos/v6.mp4" autoplay muted loop playsinline></video>
+
+        </section>
+
+
+        <!-- =========================
+             AS SEEN IN
+        ========================= -->
+        <section class="seen-in">
+            <p class="eyebrow">AS SEEN IN</p>
+        </section>
+
+
+        <!-- =========================
+             LET'S BE FRIENDS
+        ========================= -->
+        <section class="lbf">
+
+            <h2 class="lbf-title">LET'S BE FRIENDS</h2>
+            <p class="lbf-subtitle">Join our monthly promotions, secret happy hours &amp; early access to the latest cocktails.</p>
+
+            <div class="lbf-slider">
+                <div class="lbf-track">
+
+                    <div class="lbf-group">
+                        <img src="images/friend-1.png" alt="Friends in the park with cocktails">
+                        <img src="images/friend-2.png" alt="Roller skates and a gin cocktail">
+                        <img src="images/friend-3.png" alt="Bartender at the taps">
+                        <img src="images/friend-4.png" alt="Woman with a cocktail pouch at work">
+                        <img src="images/friend-5.png" alt="Woman drinking from a can on a train">
+                        <img src="images/friend-6.png" alt="Friends enjoying cocktails">
+                        <img src="images/friend-7.png" alt="Piña colada and a cocktail pouch">
+                        <img src="images/friend-8.png" alt="Woman holding a cocktail pouch">
+                        <img src="images/friend-9.png" alt="Spiced margarita pouch outdoors">
+                        <img src="images/friend-10.png" alt="Friends laughing with a party keg">
+                    </div>
+
+                    <!-- duplicate for seamless loop -->
+                    <div class="lbf-group" aria-hidden="true">
+                        <img src="images/friend-1.png" alt="">
+                        <img src="images/friend-2.png" alt="">
+                        <img src="images/friend-3.png" alt="">
+                        <img src="images/friend-4.png" alt="">
+                        <img src="images/friend-5.png" alt="">
+                        <img src="images/friend-6.png" alt="">
+                        <img src="images/friend-7.png" alt="">
+                        <img src="images/friend-8.png" alt="">
+                        <img src="images/friend-9.png" alt="">
+                        <img src="images/friend-10.png" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             NEWSLETTER 2
+        ========================= -->
+        <section class="newsletter">
+
+            <h2>SIGN UP &amp; GET 10% OFF ON YOUR FIRST ORDER</h2>
+
+            <form class="newsletter-form">
+
+                <label class="email-field">
+                    <span class="email-icon"><img src="images/envelop.png" alt=""></span>
+                    <input
+                        class="email-input"
+                        type="email"
+                        placeholder="your email..."
+                        aria-label="Your email address"
+                        required
+                    >
+                </label>
+
+                <button type="submit" class="submit-button">
+                    SUBMIT <span>→</span>
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+    <footer class="ft">
+
+        <div class="ft-top">
+
+            <div class="ft-col">
+                <h4>SHOP</h4>
+                <a href="#">Cans</a>
+                <a href="#">Pouches</a>
+                <a href="#">Party Kegs</a>
+                <a href="#">On-Tap</a>
+                <a href="#">Frozen</a>
+                <a href="#">The Cocktail Cruiser</a>
+                <a href="#">Bar Solutions</a>
+            </div>
+
+            <div class="ft-col">
+                <h4>LEARN</h4>
+                <a href="#">About Us</a>
+                <a href="#">Account Login</a>
+                <a href="#">Contact Us</a>
+                <a href="#">FAQs</a>
+                <a href="#">Jobs</a>
+                <a href="#">Trade Registration</a>
+                <a href="#">Members Club</a>
+            </div>
+
+            <div class="ft-col">
+                <h4>MORE</h4>
+                <a href="#">Shipping</a>
+                <a href="#">Returns</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms &amp; Conditions</a>
+            </div>
+
+            <div class="ft-brand">
+                <div class="ft-social">
+                    <a href="#"><img src="images/Vector.png" alt="YouTube"></a>
+                    <a href="#"><img src="images/Vector-2.png" alt="Instagram"></a>
+                    <a href="#"><img src="images/Vector-3.png" alt="Facebook"></a>
+                    <a href="#"><img src="images/Vector-4.png" alt="TikTok"></a>
+                    <a href="#"><img src="images/Vector-5.png" alt="LinkedIn"></a>
+                </div>
+                <img src="images/Link → footer-logo.png.png" alt="Liberation Cocktails" class="ft-logo">
+            </div>
+
+        </div>
+
+        <div class="ft-bottom">
+            <img src="images/List.png" alt="Accepted payments" class="ft-pay">
+            <p>© 2026, Liberation Cocktails Website by Redefined.</p>
+        </div>
+
+    </footer>
+
+
+    <script>
+        // MAKE YOUR MOMENT: play / pause button on each video
+        document.querySelectorAll(".moment-media").forEach(function (media) {
+            var video = media.querySelector("video");
+            var button = media.querySelector(".play");
+
+            button.addEventListener("click", function () {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+
+            video.addEventListener("play", function () {
+                media.classList.add("playing");
+                button.setAttribute("aria-label", "Pause video");
+            });
+
+            video.addEventListener("pause", function () {
+                media.classList.remove("playing");
+                button.setAttribute("aria-label", "Play video");
+            });
+        });
+
+        // REVIEWS: copy the cards once so the scrolling loop has no gap
+        document.querySelectorAll(".rv-track").forEach(function (track) {
+            var group = track.querySelector(".rv-group");
+            var copy = group.cloneNode(true);
+            copy.setAttribute("aria-hidden", "true");
+            track.appendChild(copy);
+        });
+    </script>
+
+</body>
+</html>

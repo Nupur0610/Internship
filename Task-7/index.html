@@ -1,0 +1,1007 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gattertop Drinks Co.</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <style>
+        /* Basic page settings */
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        /* Smooth transitions for buttons and links */
+        a,
+        button {
+            transition:
+                color 0.3s ease,
+                background-color 0.3s ease,
+                opacity 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        /* Smooth image hover */
+        .product-image {
+            transition: transform 0.4s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Smooth sidebar */
+        #mobile-sidebar {
+            transition: transform 0.4s ease-in-out;
+        }
+
+        #menu-overlay {
+            transition: opacity 0.35s ease-in-out;
+        }
+
+        /* Continuous slider movement */
+        .featuredSwiper .swiper-wrapper,
+        .photoSwiper .swiper-wrapper,
+        .instagramSwiper .swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
+
+        /* Prevent unwanted horizontal overflow */
+        section {
+            max-width: 100%;
+        }
+
+        /* Respect reduced-motion settings */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            a,
+            button,
+            #mobile-sidebar,
+            #menu-overlay,
+            .product-image {
+                transition: none !important;
+            }
+        }
+
+        .instagramSwiper .swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
+ 
+    </style>
+</head>
+
+<body class="bg-white">
+
+    <!-- Announcement Bar -->
+    <div class="w-full bg-[#9D7B55] px-3 py-[11px] text-center items-center text-[13px] font-medium text-white sm:text-[15px]">
+        UPTO 25% OFF EVERYTHING
+    </div>
+
+
+    <!-- Hero Section -->
+    <section
+        class="relative min-h-[580px] bg-cover bg-center sm:min-h-[650px] lg:min-h-[780px]"
+        style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/HERO%20SECTION.jpg');"
+    >
+
+        <!-- Navigation -->
+        
+<!-- Navbar -->
+<nav class="relative z-50 mx-auto grid w-full max-w-[1200px] grid-cols-[1fr_auto_1fr] items-center px-4 py-4 text-white sm:px-6 md:px-10 md:py-6">
+
+    <!-- Left: Desktop Links / Mobile Hamburger -->
+    <div class="flex min-w-0 items-center justify-start">
+
+        <!-- Desktop Left Links -->
+        <div class="hidden items-center gap-5 text-[13px] font-semibold lg:flex xl:gap-6 xl:text-[15px]">
+            <a href="#categories" class="hover:opacity-70">SHOP</a>
+            <a href="#journal" class="hover:opacity-70">JOURNAL</a>
+            <a href="#categories" class="hover:opacity-70">COCKTAILS</a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button
+            type="button"
+            id="menu-toggle"
+            class="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center lg:hidden"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-sidebar"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round">
+                <path d="M3 6h18M3 12h18M3 18h18"/>
+            </svg>
+        </button>
+
+    </div>
+
+    <!-- Center: Logo -->
+    <a href="#" class="flex items-center justify-center">
+        <img
+            src="images/image 31.png"
+            alt="Gattertop Drinks Co."
+            class="w-[100px] sm:w-[125px] md:w-[140px]"
+        >
+    </a>
+
+    <!-- Right: Desktop Links and Icons -->
+    <div class="flex min-w-0 items-center justify-end gap-3 sm:gap-4 lg:gap-5 xl:gap-8">
+
+        <!-- Desktop Right Links -->
+        <div class="hidden items-center gap-4 text-[13px] font-semibold lg:flex xl:gap-6 xl:text-[15px]">
+            <a href="#about" class="hover:opacity-70">ABOUT US</a>
+            <a href="#footer" class="hover:opacity-70">CONTACT</a>
+            <a href="#footer" class="hover:opacity-70">CAREERS</a>
+        </div>
+
+        <!-- Icons -->
+        <div class="flex shrink-0 items-center gap-2 sm:gap-3">
+
+            <button type="button" aria-label="Search" class="cursor-pointer">
+                <img src="images/search Icon.png" alt="" class="h-4 w-4 object-contain sm:h-[18px] sm:w-[18px]">
+            </button>
+
+            <button type="button" aria-label="Account" class="cursor-pointer">
+                <img src="images/User  icon.png" alt="" class="h-4 w-4 object-contain sm:h-[18px] sm:w-[18px]">
+            </button>
+
+            <button type="button" aria-label="Shopping bag" class="cursor-pointer">
+                <img src="images/Cart Icon.png" alt="" class="h-4 w-4 object-contain sm:h-[18px] sm:w-[18px]">
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+        <!-- Sidebar Overlay -->
+        <div
+            id="menu-overlay"
+            class="pointer-events-none fixed inset-0 z-[90] bg-black/50 opacity-0"
+            aria-hidden="true">
+        </div>
+
+
+        <!-- Mobile Sidebar -->
+        <aside
+            id="mobile-sidebar"
+            class="fixed left-0 top-0 z-[100] flex h-[100dvh] w-[280px] max-w-[85vw] -translate-x-full flex-col overflow-y-auto bg-[#9D7B55] px-6 py-6 text-white shadow-2xl lg:hidden"
+            aria-hidden="true"
+            inert
+        >
+
+            <div class="mb-10 flex items-center justify-between">
+
+                <a href="#" class="inline-block">
+                    <img src="images/image 31.png" alt="Gattertop Drinks Co." class="w-[130px]">
+                </a>
+
+                <button
+                    type="button"
+                    id="menu-close"
+                    class="cursor-pointer p-2 text-3xl leading-none"
+                    aria-label="Close menu">
+                    &times;
+                </button>
+
+            </div>
+
+            <nav class="flex flex-col gap-6 text-[14px] font-semibold">
+
+                <a href="#categories" class="hover:opacity-70">SHOP</a>
+                <a href="#journal" class="hover:opacity-70">JOURNAL</a>
+                <a href="#categories" class="hover:opacity-70">COCKTAILS</a>
+
+                <div class="border-t border-white/30"></div>
+
+                <a href="#about" class="hover:opacity-70">ABOUT US</a>
+                <a href="#footer" class="hover:opacity-70">CONTACT</a>
+                <a href="#footer" class="hover:opacity-70">CAREERS</a>
+
+            </nav>
+        </aside>
+
+
+        <!-- Hero Content -->
+        <div class="mx-auto flex min-h-[480px]  flex-col items-center justify-center pb-10 pt-12 text-center text-white sm:min-h-[540px] lg:min-h-[620px]">
+
+            <div class="w-full h-[150px] bg-[#9D7B55]/70 sm:px-8 sm:py-9 md:px-12">
+
+                <h1 class="text-[32px] font-['Poppins'] font-semibold uppercase leading-[1.1] tracking-[0.03em] sm:text-[32px] md:text-[32px] lg:text-[32px]">
+                    HAVE A VERY MERRY CHRISTMAS
+                </h1>
+
+                <p class="mt-2 text-[20px] font-['Poppins'] font-medium leading-[20px] tracking-[0] text-center sm:text-[16px] md:text-[20px]">
+                    Discover thoughtful presents for everyone on your list this festive season
+                </p>
+
+            </div>
+
+            <a
+                href="#categories"
+                class="mt-6 inline-block bg-[#095248] px-8 py-3 text-[20px] font-medium text-white hover:bg-[#004438] sm:px-10"
+            >
+                SHOP NOW
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- AS FEATURED IN SECTION -->
+    <section class="overflow-hidden bg-[#F5F4F9] px-5 py-8 md:px-10 md:py-10">
+
+        <div class="mx-auto max-w-[1170px]">
+
+            <h2 class="mb-5 text-[20px] font-medium uppercase leading-none text-[#242116]">
+                AS FEATURED IN
+            </h2>
+
+            <div class="w-full overflow-hidden">
+
+                <div class="swiper featuredSwiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide !w-auto">
+                            <img
+                                src="images/asfeatured.png"
+                                alt="Featured publications"
+                                class="block h-[70px] w-auto max-w-none object-contain md:h-[90px]"
+                            >
+                        </div>
+
+                        <div class="swiper-slide !w-auto" aria-hidden="true">
+                            <img
+                                src="images/asfeatured.png"
+                                alt=""
+                                class="block h-[70px] w-auto max-w-none object-contain md:h-[90px]"
+                            >
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+<!-- Categories Section -->
+<section id="categories" class="bg-[#F5F4F9] px-5 py-10 md:px-10 md:py-12">
+
+    <div class="mx-auto max-w-[1170px]">
+
+        <!-- Heading -->
+        <h2 class="text-center font-medium text-[22px] leading-[1.2] uppercase text-[#242116] sm:text-[25px]">
+            FIND SOMETHING FOR EVERYONE
+        </h2>
+
+        <!-- Category Grid -->
+        <div class="mx-auto mt-9 grid max-w-[805px] grid-cols-1 gap-8 md:grid-cols-3 md:gap-5">
+
+            <!-- Bottles -->
+            <div class="min-w-0 text-center">
+
+                <img
+                    src="images/image 28.jpg"
+                    alt="Bottles"
+                    class="product-image h-[364px] w-full object-cover"
+                >
+
+                <button
+                    class="mx-auto mt-9 flex h-[52px] w-[218px] max-w-full items-center justify-center bg-[#095248] px-2"
+                >
+                    <span class="whitespace-nowrap font-['Poppins'] text-[18px] font-semibold leading-none text-center uppercase text-white">
+                        SHOP BOTTLES
+                    </span>
+                </button>
+
+            </div>
+
+            <!-- Cocktail Kits -->
+            <div class="min-w-0 text-center">
+
+                <img
+                    src="images/image 29.jpg"
+                    alt="Cocktail kits"
+                    class="product-image h-[364px] w-full object-cover"
+                >
+
+                <button
+                    class="mx-auto mt-9 flex h-[52px] w-[218px] max-w-full items-center justify-center bg-[#095248] px-2"
+                >
+                    <span class="whitespace-nowrap font-['Poppins'] text-[18px] font-semibold leading-none text-center uppercase text-white">
+                        SHOP COCKTAIL KITS
+                    </span>
+                </button>
+
+            </div>
+
+            <!-- Hampers -->
+            <div class="min-w-0 text-center">
+
+                <img
+                    src="images/image 30.jpg"
+                    alt="Gift hampers"
+                    class="product-image h-[364px] w-full object-cover"
+                >
+
+                <button
+                    class="mx-auto mt-9 flex h-[52px] w-[218px] max-w-full items-center justify-center bg-[#095248] px-2"
+                >
+                    <span class="whitespace-nowrap font-['Poppins'] text-[18px] font-semibold leading-none text-center uppercase text-white">
+                        SHOP HAMPERS
+                    </span>
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- About Us -->
+    <section id="about" class="bg-[#9D7B55] px-5 py-10 text-white md:px-10 md:py-16">
+
+        <div class="mx-auto grid max-w-[990px] grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
+
+            <div>
+                <img
+                    src="images/image 35.jpg"
+                    alt="Gattertop Drinks Co. orchard"
+                    class="h-auto w-full object-cover"
+                >
+            </div>
+
+            <div class="w-full min-w-0 md:max-w-[400px]">
+
+                <p class="mb-4 text-[15px] leading-[20px]">
+                    To conserve and protect British orchards
+                </p>
+
+                <h2 class="mb-5 text-[30px] font-bold uppercase leading-[1.2] sm:text-[33px]">
+                    ABOUT US
+                </h2>
+
+                <div class="space-y-4 text-[14px] leading-[1.7] sm:text-[16px] sm:leading-[22px]">
+
+                    <p>
+                        It is important to preserve and protect these majestic landscapes
+                        not only because it is our home, but because orchards are rapidly
+                        vanishing from the British landscape.
+                    </p>
+
+                    <p>
+                        With their disappearance vital habitats for local wildlife are
+                        destroyed and the rich cultural heritage of the British
+                        countryside is lost.
+                    </p>
+
+                </div>
+
+                <a
+                    href="#"
+                    class="mt-7 flex min-h-[50px] w-full max-w-[377px] items-center justify-center bg-[#095248] hover:bg-[#004438] sm:h-[55px]"
+                >
+                    <span class="text-center text-[15px] font-semibold">LEARN MORE</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Awards -->
+    <section class="bg-[#F5F4F9] px-5 py-10 md:px-10 md:py-12">
+
+        <div class="mx-auto flex max-w-[1170px] items-center justify-center">
+
+            <img
+                src="images/image_36-removebg-preview 1.jpg"
+                alt="Awards and recognitions"
+                class="h-auto w-full max-w-[700px] object-contain"
+            >
+
+        </div>
+    </section>
+
+
+    <!-- Bestsellers -->
+    <section class="bg-[#F5F4F9] px-5 py-10 md:px-10 md:py-12">
+
+        <div class="mx-auto w-full max-w-[1040px]">
+
+            <h2 class="mb-8 text-center text-[22px] font-medium uppercase leading-[1.2] text-[#242116] sm:text-[25px]">
+                OUR BESTSELLERS
+            </h2>
+
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-3">
+
+                <div class="min-w-0 text-center">
+
+                    <img src="images/image 48.jpg" alt="No 12, Damson Vodka" class="product-image h-auto w-full object-cover">
+
+                    <h3 class="mx-auto flex min-h-[50px] w-full max-w-[218px] items-center justify-center text-center text-[18px] font-semibold leading-[1.3] sm:text-[20px]">
+                        No 12, Damson Vodka
+                    </h3>
+
+                    <p class="mt-1 text-center text-[20px] font-medium">£ 34.99</p>
+
+                    <button class="mt-3 h-[38px] w-full cursor-pointer bg-[#095248] text-[13px] font-medium text-white hover:bg-[#004438]">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+                <div class="min-w-0 text-center">
+
+                    <img src="images/image 50.jpg" alt="No 7, Botanical Vodka" class="product-image h-auto w-full object-cover">
+
+                    <h3 class="mx-auto flex min-h-[50px] w-full max-w-[218px] items-center justify-center text-center text-[18px] font-semibold leading-[1.3] sm:text-[20px]">
+                        No 7, Botanical vodka
+                    </h3>
+
+                    <p class="mt-1 text-center text-[20px] font-medium">£ 34.99</p>
+
+                    <button class="mt-3 h-[38px] w-full cursor-pointer bg-[#095248] text-[13px] font-medium text-white hover:bg-[#004438]">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+                <div class="min-w-0 text-center">
+
+                    <img src="images/image 52.jpg" alt="No 12, Damson Vodka" class="product-image h-auto w-full object-cover">
+
+                    <h3 class="mx-auto flex min-h-[50px] w-full max-w-[218px] items-center justify-center text-center text-[18px] font-semibold leading-[1.3] sm:text-[20px]">
+                        No 12, Damson vodka
+                    </h3>
+
+                    <p class="mt-1 text-center text-[20px] font-medium">£ 25.00</p>
+
+                    <button class="mt-3 h-[38px] w-full cursor-pointer bg-[#095248] text-[13px] font-medium text-white hover:bg-[#004438]">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+                <div class="min-w-0 text-center">
+
+                    <img src="images/image 54.jpg" alt="Best Vodka Bundle" class="product-image h-auto w-full object-cover">
+
+                    <h3 class="mx-auto flex min-h-[50px] w-full max-w-[218px] items-center justify-center text-center text-[18px] font-semibold leading-[1.3] sm:text-[20px]">
+                        Best Vodka Bundle
+                    </h3>
+
+                    <p class="mt-1 text-center text-[20px] font-medium">£ 63.00</p>
+
+                    <button class="mt-3 h-[38px] w-full cursor-pointer bg-[#095248] text-[13px] font-medium text-white hover:bg-[#004438]">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Journal -->
+    <section id="journal" class="bg-[#9D7B55] px-5 py-10 text-white md:px-10 md:py-12">
+
+        <div class="mx-auto grid max-w-[990px] grid-cols-1 items-center gap-6 md:grid-cols-2 md:gap-8">
+
+            <div class="order-1 min-w-0 md:order-2">
+
+                <img
+                    src="images/image 56.jpg"
+                    alt="Gattertop Drinks journal"
+                    class="h-auto w-full object-cover"
+                >
+
+            </div>
+
+            <div class="order-2 min-w-0 md:order-1">
+
+                <p class="text-[12px] leading-[1.4] md:text-[15px]">
+                    Gattertop Drinks: 2024 Year in Review
+                </p>
+
+                <h2 class="mt-2 text-[28px] font-bold uppercase leading-[1.2] md:text-[33px]">
+                    JOURNAL
+                </h2>
+
+                <p class="mt-4 text-[12px] leading-[1.8] sm:text-[14px]">
+
+                    As 2024 comes to a close, we’re taking a moment to reflect on what has been a truly extraordinary year for Gattertop Drinks. From record-breaking moments to exciting collaborations.
+
+                    <br><br>
+
+                    And prestigious achievements, this year has been one for the books. None of it would have been possible without your continued support. New customers to our award winning.
+
+                </p>
+
+                <a
+                    href="#"
+                    class="mt-6 flex min-h-[50px] w-full items-center justify-center bg-[#095248] px-4 text-center text-[16px] font-semibold uppercase text-white hover:bg-[#004438] sm:min-h-[55px] sm:text-[20px]"
+                >
+                    LEARN MORE
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Carbon Neutral Vodka Slider -->
+    <section class="overflow-hidden px-5 py-10 md:px-10 md:py-16">
+
+        <div class="mx-auto w-full max-w-[1325px]">
+
+            <div class="mb-8">
+
+                <h2 class="text-center text-[19px] font-semibold uppercase leading-[1.0] tracking-[0.03em] text-[#242116] sm:text-[22px] md:text-[25px]">
+                    THE UK'S FIRST CARBON-NEUTRAL VODKA COMPANY
+                </h2>
+                <p class="mt-2 text-center text-[13px] font-medium leading-[1.0] sm:text-[15px]">
+                    Naturally flavoursome vodka with a truly sustainable conscience
+                </p>
+
+            </div>
+
+            <div class="swiper photoSwiper overflow-hidden">
+
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <img src="images/image 42.png"
+                            alt="Celebrating with Gattertop Drinks"
+                            class="h-auto w-full rounded-[20px] object-cover sm:h-auto lg:h-auto">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/image 43.png"
+                            alt="Enjoying cocktails"
+                            class="h-auto w-full rounded-[20px] object-cover sm:h-auto lg:h-auto">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/image 44.png"
+                            alt="Gattertop Drinks event"
+                            class="h-auto w-full rounded-[20px] object-cover sm:h-auto lg:h-auto">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/image 45.png"
+                            alt="Enjoying Gattertop vodka"
+                            class="h-auto w-full rounded-[20px] object-cover sm:h-auto lg:h-auto">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/image 46.png"
+                            alt="Enjoying Gattertop vodka"
+                            class="h-auto w-full rounded-[20px] object-cover sm:h-auto lg:h-auto">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Instagram and Footer -->
+    <section id="footer" class="overflow-hidden bg-[#9D7B55] px-5 py-10 text-white md:px-10 md:py-16">
+
+        <div class="mx-auto w-full max-w-[1325px]">
+
+           
+<div class="text-center">
+
+    <h2 class="font-['Poppins'] text-[25px] font-medium leading-[100%] tracking-[0.05em] uppercase">
+        FOLLOW US ON INSTAGRAM
+    </h2>
+
+    <p class="mx-auto mt-2 w-[250px] h-[35px] font-['Poppins'] text-[23px] font-normal leading-[100%] tracking-[0.05em] text-center">
+        @gattertopdrinksco
+    </p>
+
+</div>
+
+            <!-- Instagram Slider -->
+            <div class="swiper instagramSwiper mt-8 w-full overflow-hidden">
+
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <img src="images/image 36.jpg"
+                            alt="Gattertop drinks collection"
+                            class="h-auto w-full border-2 border-white object-cover sm:h-auto md:h-auto">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/image 37.jpg"
+                            alt="Cocktail preparation"
+                            class="h-auto w-full border-2 border-white object-cover sm:h-auto md:h-auto">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/image 38.jpg"
+                            alt="Gattertop vodka and glass"
+                            class="h-auto w-full border-2 border-white object-cover sm:h-auto md:h-auto">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/image 41.jpg"
+                            alt="Serving a cocktail"
+                            class="h-auto w-full border-2 border-white object-cover sm:h-auto md:h-auto">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/image 40.jpg"
+                            alt="Gattertop bottle and drinks"
+                            class="h-auto w-full border-2 border-white object-cover sm:h-auto md:h-auto">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/image 36.jpg"
+                            alt="Gattertop drinks collection"
+                            class="h-auto w-full border-2 border-white object-cover sm:h-auto md:h-auto">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/image 37.jpg"
+                            alt="Cocktail preparation"
+                            class="h-auto w-full border-2 border-white object-cover sm:h-auto md:h-auto">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/image 38.jpg"
+                            alt="Gattertop vodka and glass"
+                            class="h-auto w-full border-2 border-white object-cover sm:h-auto md:h-auto">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/image 41.jpg"
+                            alt="Serving a cocktail"
+                            class="h-auto w-full border-2 border-white object-cover sm:h-auto md:h-auto">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/image 40.jpg"
+                            alt="Gattertop bottle and drinks"
+                            class="h-auto w-full border-2 border-white object-cover sm:h-auto md:h-auto">
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <!-- Footer Content -->
+            <div class="mt-10 grid grid-cols-1 gap-8 text-center sm:grid-cols-3 sm:items-start sm:gap-6 sm:text-left md:mt-12">
+
+                <!-- Left Links -->
+                <div class="text-[11px] font-medium leading-[2]">
+
+                    <a href="#categories" class="block hover:opacity-70">SHOP</a>
+                    <a href="#about" class="block hover:opacity-70">ABOUT US</a>
+                    <a href="#footer" class="block hover:opacity-70">CONTACT US</a>
+                    <a href="#footer" class="block hover:opacity-70">B CORP</a>
+
+                </div>
+
+
+                <!-- Newsletter -->
+                <div class="mx-auto w-full max-w-[440px] sm:mx-0 sm:max-w-none">
+
+                    <h3 class="text-[16px] font-semibold uppercase">
+                        NEWSLETTER
+                    </h3>
+
+                    <form class="mt-3 flex w-full flex-col gap-2 sm:flex-row sm:items-center">
+
+                        <input
+                            type="email"
+                            placeholder="Enter email"
+                            class="h-[39px] w-full min-w-0  bg-white px-5 text-[11px] text-black outline-none"
+                        >
+
+                        <button
+                            type="submit"
+                            class="h-[39px] w-full min-w-0 shrink-0 cursor-pointer bg-black px-5 text-[11px] font-semibold uppercase text-white hover:bg-[#242116] sm:w-auto"
+                        >
+                            SIGN UP
+                        </button>
+
+                    </form>
+
+                    <p class="mt-2 text-[10px] font-medium uppercase leading-relaxed">
+                        Sign up for exclusive offers, stories, events &amp; more.
+                    </p>
+
+                </div>
+
+
+                <!-- Right Links and Social Icons -->
+                <div class="text-center text-[11px] font-medium leading-[2] sm:text-right">
+
+                    <a href="#about" class="block hover:opacity-70">OUR STORY</a>
+                    <a href="#journal" class="block hover:opacity-70">NEWS &amp; NOTES</a>
+                    <a href="#footer" class="block hover:opacity-70">POLICIES</a>
+
+                    <div class="mt-2 flex items-center justify-center gap-2 sm:justify-end">
+
+                        <a href="#" aria-label="Facebook">
+                            <img src="images/facebook (1) 1.png"
+                                alt="Facebook"
+                                class="h-[30px] w-[30px] object-contain">
+                        </a>
+
+                        <a href="#" aria-label="Instagram">
+                            <img src="images/instagram 1.png"
+                                alt="Instagram"
+                                class="h-[30px] w-[30px] object-contain">
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Footer Logo -->
+            <div class="mt-10 text-center">
+
+                <img
+                    src="images/image 31.png"
+                    alt="Gattertop Drinks Co."
+                    class="mx-auto w-[130px] sm:w-[150px]"
+                >
+
+            </div>
+
+
+            <!-- Payment Methods -->
+            <div class="mt-6 flex items-center justify-center">
+
+                <img
+                    src="images/Screenshot_2-removebg-preview (1) 1.jpg"
+                    alt="Payment Options"
+                    class="h-auto w-full max-w-[260px] object-contain"
+                >
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Swiper JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // Featured In Slider
+        const featuredSwiper = new Swiper(".featuredSwiper", {
+            loop: true,
+            slidesPerView: "auto",
+            spaceBetween: 12,
+            speed: 10000,
+            allowTouchMove: true,
+
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: false
+            }
+        });
+
+
+        // Carbon-Neutral Vodka Slider
+        const photoSwiper = new Swiper(".photoSwiper", {
+            loop: true,
+            speed: 5000,
+            spaceBetween: 12,
+            slidesPerView: 1.2,
+
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: false
+            },
+
+            breakpoints: {
+                640: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 12
+                },
+
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 12
+                }
+            },
+
+            allowTouchMove: true
+        });
+
+
+ // Instagram Slider
+ const instagramSwiper = new Swiper(".instagramSwiper", {
+            loop: true,
+            speed: 5000,
+            spaceBetween: 0,
+            slidesPerView: 1.5,
+ 
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: false
+            },
+ 
+            breakpoints: {
+                640: {
+                    slidesPerView: 2.5
+                },
+ 
+                768: {
+                    slidesPerView: 3.5
+                },
+ 
+                1024: {
+                    slidesPerView: 4.4
+                }
+            },
+ 
+            allowTouchMove: true
+        });
+ 
+
+
+
+
+        // Mobile Sidebar
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileSidebar = document.getElementById("mobile-sidebar");
+        const menuOverlay = document.getElementById("menu-overlay");
+        const menuClose = document.getElementById("menu-close");
+
+        const allSwipers = [
+            featuredSwiper,
+            photoSwiper,
+            instagramSwiper
+        ];
+
+
+        function openSidebar() {
+            mobileSidebar.classList.remove("-translate-x-full");
+            mobileSidebar.inert = false;
+
+            menuOverlay.classList.remove(
+                "opacity-0",
+                "pointer-events-none"
+            );
+
+            menuOverlay.classList.add("pointer-events-auto");
+
+            mobileSidebar.setAttribute("aria-hidden", "false");
+            menuOverlay.setAttribute("aria-hidden", "false");
+
+            menuToggle.setAttribute("aria-expanded", "true");
+            menuToggle.setAttribute("aria-label", "Close menu");
+
+            document.body.style.overflow = "hidden";
+
+            // Pause sliders while the menu is open
+            allSwipers.forEach(function (swiper) {
+                swiper.autoplay.stop();
+            });
+        }
+
+
+        function closeSidebar() {
+            mobileSidebar.classList.add("-translate-x-full");
+
+            menuOverlay.classList.add(
+                "opacity-0",
+                "pointer-events-none"
+            );
+
+            menuOverlay.classList.remove("pointer-events-auto");
+
+            mobileSidebar.setAttribute("aria-hidden", "true");
+            mobileSidebar.inert = true;
+
+            menuOverlay.setAttribute("aria-hidden", "true");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open menu");
+
+            document.body.style.overflow = "";
+
+            // Resume sliders after closing the menu
+            allSwipers.forEach(function (swiper) {
+                swiper.autoplay.start();
+            });
+        }
+
+
+        // Open and close sidebar
+        menuToggle.addEventListener("click", function () {
+            const isOpen =
+                menuToggle.getAttribute("aria-expanded") === "true";
+
+            if (isOpen) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+
+
+        menuClose.addEventListener("click", closeSidebar);
+        menuOverlay.addEventListener("click", closeSidebar);
+
+
+        // Close sidebar after selecting a link
+        mobileSidebar.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", closeSidebar);
+        });
+
+
+        // Close sidebar using Escape
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeSidebar();
+            }
+        });
+
+
+        // Close sidebar when switching to desktop width
+        window.addEventListener("resize", function () {
+            if (window.innerWidth >= 1024 &&
+                menuToggle.getAttribute("aria-expanded") === "true") {
+                closeSidebar();
+            }
+        });
+    </script>
+
+</body>
+</html>
